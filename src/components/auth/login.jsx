@@ -1,6 +1,7 @@
 import React from 'react'
 import Input from '../UI/input'
 import Button from '../UI/button'
+import { Link } from 'react-router-dom'
 
 
 
@@ -35,8 +36,9 @@ return (
       <Button type={"submit"} label={"Login"}/>
     </div>
     
-    <div className='w-full flex justify-center items-center text-[#8B8E98] mt-4'>
-    <a href="">forgot password ?</a>
+    <div className='w-full flex justify-center items-center text-[#8B8E98] mt-4 hover:text-white'>
+    <a href=""></a>
+    <Link to='/forgot'>forgot password ?</Link>
     </div>
   </div>
 </div>

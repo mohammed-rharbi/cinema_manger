@@ -5,7 +5,7 @@ import SideBar from '../layout/sideBar'
 import { Outlet } from 'react-router-dom'
 
 
-export default function layout() {
+export default function Layout() {
   return (
 
     <>
@@ -14,9 +14,7 @@ export default function layout() {
 <SideBar/>
 
 <main>
-
 <Outlet/>
-
 </main>
 
 <Fotter/>
