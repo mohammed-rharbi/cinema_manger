@@ -11,3 +11,23 @@
   background-position: center;
   background-attachment: fixed;
 }
+
+#chape{
+  height: 25%;
+  width: 25%;
+  clip-path: polygon(100% 0, 100% 50%, 100% 99%, 0% 100%, 54% 48%, 0% 0%);
+}
+#chape img{
+  border-radius: 15%;
+}
+
+#chape1{
+  height: 25%;
+  width: 25%;
+clip-path: polygon(0 0, 0% 100%, 53% 51%);
+
+}
+#chape1 img{
+  border-radius: 15%;
+}
+

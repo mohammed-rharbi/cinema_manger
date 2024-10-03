@@ -3,6 +3,7 @@ import Layout from '../components/layout/layout';
 import Regester from "../components/auth/regester";
 import Login from "../components/auth/login";
 import Forgot from "../components/auth/forgot";
+import Home from "../components/home/home";
 
 const router = createBrowserRouter([
     {
@@ -11,7 +12,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <h1>home</h1>
+                element: <Home/>
             },
           
             {
@@ -19,11 +20,12 @@ const router = createBrowserRouter([
                 element: <h1>movies</h1>
             },
             
-            {
-                path: "/regester",
-                element: <Regester />
-            }
         ]},
+
+        {
+            path: "/register",
+            element: <Regester />
+        },
             
         {
             path: "/login",
