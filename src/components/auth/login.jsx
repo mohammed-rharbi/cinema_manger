@@ -15,10 +15,29 @@ const loginUser = async (userData) => {
 
       const data =  response.data;
 
-      localStorage.setItem('authToken', data.token);
-      console.log('user data :' + data);
+      if(data.token) {
 
-      window.location.href = '/dashboard';
+        localStorage.setItem('authToken', data.token);
+
+        const userRole = data.user.role;
+        localStorage.setItem('userRole', userRole);
+
+        if(userRole === 'admin') {
+
+          window.location.href = '/dashboard';
+
+        }else if(userRole === 'customer') {
+
+          window.location.href = '/home';
+        }else{
+
+          window.location.href = '/';
+        }
+
+      }else{
+        toast.error("login failed");
+      }
+
 
   } catch (err) {
 
@@ -61,12 +80,12 @@ export default function Login() {
 
     if(UserEmail === "" || UserEmail === null){
       result = false;
-      toast.error("Please Enter Email");
+      toast.warning("Please Enter Email");
     }
 
     if(UserPassword === "" || UserPassword === null){
       result = false;
-      toast.error("Please Enter Password");
+      toast.warning("Please Enter Password");
     }
 
     return result;

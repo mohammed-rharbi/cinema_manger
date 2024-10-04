@@ -3,9 +3,10 @@ import Layout from '../components/layout/AdminLayout';
 import Regester from "../components/auth/regester";
 import Login from "../components/auth/login";
 import Forgot from "../components/auth/forgot";
-import Home from "../components/home/home";
+import Landing from "../components/home/landing";
 import CusLayout from "../components/layout/CustomerLayout";
 import Dashboard from "../components/admin/dashboard";
+import Home from "../components/home/home";
 
 const router = createBrowserRouter([
     
@@ -30,17 +31,17 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Home/>
+                element: <Landing/>
             },
           
             {
-                path: "/movies",
+                path: "/Allmovies",
                 element: <h1>movies</h1>
             },
 
             {
-                path: "/movies",
-                element: <h1>movies</h1>
+                path: "/home",
+                element: <Home/>
             },
             
         ]},

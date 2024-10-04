@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
 
 
 
@@ -89,9 +90,8 @@ clip-path: polygon(0 0, 0% 100%, 53% 51%);
 }
 
 #text{
-  font-family: "Abril Fatface", serif;
-  font-weight: 400;
-  font-style: normal;
+
+  font-family: 'Playfair Display', serif;  font-weight: 400;
   font-size: 4em;
   
 }
