@@ -112,7 +112,7 @@ return (
       <Input value={UserEmail} type={"email"} onChange={(e) => UpdateEmail(e.target.value)} label={"Email"} placeholder={'example@'} />
       </div>
       <div className="w-full flex flex-col gap-2">
-      <Input value={UserPassword} type={"password"} onChange={(e) => UpdatePassword(e.target.value)} label={"Password"} placeholder={'••••••••'} />
+      <Input  value={UserPassword} type={"password"} onChange={(e) => UpdatePassword(e.target.value)} label={"Password"} placeholder={'••••••••'} />
       </div>
     </div>
 

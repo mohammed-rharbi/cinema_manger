@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter , Navigate } from "react-router-dom";
 import Layout from '../components/layout/AdminLayout';
 import Regester from "../components/auth/regester";
 import Login from "../components/auth/login";
@@ -7,20 +7,24 @@ import Landing from "../components/home/landing";
 import CusLayout from "../components/layout/CustomerLayout";
 import Dashboard from "../components/admin/dashboard";
 import Home from "../components/home/home";
+import ShowTimes from "../components/home/showTimes";
+import Protection from "../services/protection";
+import Movie from "../components/home/movies";
+import ResetPassword from "../components/auth/resetPassword";
 
 const router = createBrowserRouter([
     
     {
-        element: <Layout />,
+        element: <Protection allowedRole={['admin']} element={<Layout />} />,
         children: [
             {
                 path: "/dashboard",
-                element: <Dashboard/>
+                element: <Dashboard />
             },
           
             {
                 path: "/movies",
-                element: <h1>movies</h1>
+                element: <Movie/>
             },
             
         ]},
@@ -40,8 +44,13 @@ const router = createBrowserRouter([
             },
 
             {
-                path: "/home",
+                path: "/home",  
                 element: <Home/>
+            },
+
+            {
+                path: "/showTimes",
+                element: <ShowTimes/>
             },
             
         ]},
@@ -62,6 +71,12 @@ const router = createBrowserRouter([
         {
             path: "/forgot",
             element: <Forgot/>
+        },
+
+        
+        {
+            path: "/reset-password/:token",
+            element: <ResetPassword/>
         },
          
 

@@ -10,6 +10,8 @@ export default defineConfig({
         target: 'http://localhost:5000',
         changeOrigin: true,
         secure: false,
+        hmr: true,
+        histroryApiFallback: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       }
     } 
