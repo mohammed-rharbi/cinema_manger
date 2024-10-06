@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Button from '../UI/button'
+import Slider from '../UI/slider'
 
 export default function Home() {
   return (
@@ -11,14 +12,11 @@ export default function Home() {
 <div className="flex  justify-center flex-col text-center ">
 
 
-
+<Slider/>
 
 </div>
-
-
-
-        
-    </section>
+    
+</section>
 
 
 )}

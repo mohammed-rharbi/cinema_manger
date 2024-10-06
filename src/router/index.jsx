@@ -11,6 +11,7 @@ import ShowTimes from "../components/home/showTimes";
 import Protection from "../services/protection";
 import Movie from "../components/home/movies";
 import ResetPassword from "../components/auth/resetPassword";
+import AllMovies from "../components/home/movies";
 
 const router = createBrowserRouter([
     
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
           
             {
                 path: "/Allmovies",
-                element: <h1>movies</h1>
+                element: <AllMovies/>
             },
 
             {

@@ -12,7 +12,7 @@ export default function navbar() {
 		<div class="text-gray-900 order-3 w-full md:w-auto md:order-2">
 			<ul class="flex font-semibold justify-between">
       <Link to={'/home'}><li class="md:px-4 md:py-2 hover:text-yellow-400">Home</li></Link>
-      <Link to={'/home'}><li class="md:px-4 md:py-2 hover:text-yellow-400">Movies</li></Link>
+      <Link to={'/Allmovies'}><li class="md:px-4 md:py-2 hover:text-yellow-400">Movies</li></Link>
       <Link to={'/showtimes'}><li class="md:px-4 md:py-2 hover:text-yellow-400">Show Times</li></Link>
       <Link to={'/home'}><li class="md:px-4 md:py-2 hover:text-yellow-400">Rooms</li></Link>
       <Link to={'/home'}><li class="md:px-4 md:py-2 hover:text-yellow-400">About Us</li></Link>
