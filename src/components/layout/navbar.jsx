@@ -14,8 +14,8 @@ export default function navbar() {
       <Link to={'/home'}><li class="md:px-4 md:py-2 hover:text-yellow-400">Home</li></Link>
       <Link to={'/Allmovies'}><li class="md:px-4 md:py-2 hover:text-yellow-400">Movies</li></Link>
       <Link to={'/showtimes'}><li class="md:px-4 md:py-2 hover:text-yellow-400">Show Times</li></Link>
-      <Link to={'/home'}><li class="md:px-4 md:py-2 hover:text-yellow-400">Rooms</li></Link>
-      <Link to={'/home'}><li class="md:px-4 md:py-2 hover:text-yellow-400">About Us</li></Link>
+      <Link to={'/rooms'}><li class="md:px-4 md:py-2 hover:text-yellow-400">Rooms</li></Link>
+      <Link to={'/about'}><li class="md:px-4 md:py-2 hover:text-yellow-400">About Us</li></Link>
 
 			</ul>
 		</div>

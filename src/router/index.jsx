@@ -12,6 +12,9 @@ import Protection from "../services/protection";
 import Movie from "../components/home/movies";
 import ResetPassword from "../components/auth/resetPassword";
 import AllMovies from "../components/home/movies";
+import Rooms from "../components/home/rooms";
+import NotFound from "../components/UI/404";
+import About from "../components/home/about";
 
 const router = createBrowserRouter([
     
@@ -53,6 +56,16 @@ const router = createBrowserRouter([
                 path: "/showTimes",
                 element: <ShowTimes/>
             },
+
+            {
+                path: "/rooms",
+                element: <Rooms/>
+            },
+
+            {
+                path: "/about",
+                element: <About/>
+            },
             
         ]},
 
@@ -83,7 +96,7 @@ const router = createBrowserRouter([
 
         {
             path: "*",
-            element: <h1>404</h1>
+            element: <NotFound/>
         }
             
               
