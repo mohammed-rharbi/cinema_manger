@@ -55,8 +55,8 @@ export default function About() {
                         </div>
                     </div>
                     <button
-                        class="sm:w-fit w-full group px-3.5 py-2 bg-indigo-50 hover:bg-indigo-100 rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] transition-all duration-700 ease-in-out justify-center items-center flex">
-                        <span class="px-1.5 text-indigo-600 text-sm font-medium leading-6 group-hover:-translate-x-0.5 transition-all duration-700 ease-in-out">Read More</span>
+                        class="sm:w-fit w-full group px-3.5 py-2 bg-red-500 hover:bg-indigo-100 rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] transition-all duration-700 ease-in-out justify-center items-center flex">
+                        <span class="px-1.5 text-gray-900 text-sm font-medium leading-6 group-hover:-translate-x-0.5 transition-all duration-700 ease-in-out">Read More</span>
                         <svg class="group-hover:translate-x-0.5 transition-all duration-700 ease-in-out"
                             xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                             <path d="M6.75265 4.49658L11.2528 8.99677L6.75 13.4996" stroke="#4F46E5" stroke-width="1.6"
@@ -66,9 +66,9 @@ export default function About() {
                 </div>
                 <div class="w-full lg:justify-start justify-center items-start flex">
                     <div
-                        class="sm:w-[564px] w-full sm:h-[646px] h-full sm:bg-gray-100 rounded-3xl sm:border border-gray-200 relative">
+                        class="sm:w-[564px] w-full sm:h-[646px] h-full sm:bg-red-500 rounded-3xl sm:border border-gray-200 relative">
                         <img class="sm:mt-5 sm:ml-5 w-full h-full rounded-3xl object-cover"
-                            src="https://pagedone.io/asset/uploads/1717742431.png" alt="about Us image" />
+                            src="./public/images/us.webp" alt="about Us image" />
                     </div>
                 </div>
             </div>

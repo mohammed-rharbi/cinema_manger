@@ -33,10 +33,11 @@ export default function Rooms() {
         ) : (
             rooms.map((room) => (
             <div key={room._id} className="bg-gray-800 rounded-lg shadow-lg p-4 hover:shadow-2xl transition-shadow duration-300">
+              <img src={room.image} alt={room.name} />
               <h3 className="text-xl font-semibold text-white">{room.name}</h3>
               <p className="text-gray-300 mb-4">Room Capacity : {room.capacity}</p>
               <p className="text-gray-300 mb-4">Room Type : {room.type}</p>
-              <p className="text-gray-300 mb-4">Seats : {room.seats.join(', ')}</p>
+              {/* <p className="text-gray-300 mb-4">Seats : {room.seats.map((seat) => `${seat.seateNumber}, `)}</p> */}
               <button className="bg-blue-500 text-white py-2 px-4 rounded-lg w-full hover:bg-blue-600 transition-colors">
                 View Details
               </button>

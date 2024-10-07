@@ -12,10 +12,9 @@ export default function Home() {
 <div className="flex  justify-center flex-col text-center ">
 
 
-<Slider/>
 
-</div>
-    
+
+</div>    
 </section>
 
 

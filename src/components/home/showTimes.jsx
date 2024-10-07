@@ -11,6 +11,7 @@ export default function ShowTimes() {
         const response = await axios.get('http://localhost:5000/api/showTime/allShowtimes');
 
         setShowTime(response.data.showTimes);
+        console.log(response.data);
       } catch (error) { 
         console.log(error);
       }
@@ -25,26 +26,40 @@ export default function ShowTimes() {
 
   return (
     <section className="w-full min-h-screen bg-gray-900 py-10">
-    <div className="container mx-auto">
+    <div className="mx-auto">
       <h2 className="text-3xl font-bold text-white text-center mb-8">Available ShowTime</h2>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {ShowTimes.length === 0 ? (
           <p className="text-white text-center col-span-full">No ShowTimes found</p>
         ) : (
-          ShowTimes.map((ShowTime) => (
-            <div key={ShowTime._id} className="bg-gray-800 rounded-lg shadow-lg p-4 hover:shadow-2xl transition-shadow duration-300">
 
-              <h3 className="text-xl font-semibold text-white">Movie: {ShowTime.movie}</h3>
-              <p className="text-sm text-gray-400 mb-2">Time: {new Date(ShowTime.time).toDateString()}</p>
-              <p className="text-gray-300 mb-4">Room: {ShowTime.room}</p>
-              <button className="bg-blue-500 text-white py-2 px-4 rounded-lg w-full hover:bg-blue-600 transition-colors">
-                View Details
-              </button>
-            </div>
+          ShowTimes.map((ShowTime) => (
+
+                <div class="flex justify-center items-center flex-col space-y-12 py-12 w-full mx-auto">
+                <div key={ShowTime._id}  class="py-3 sm:max-w-xl sm:mx-auto">
+                    <div class="bg-gray-800 shadow-lg border-gray-100 max-h-80	 border sm:rounded-3xl p-8 flex space-x-8">
+                      <div class="h-48 overflow-visible w-1/2">
+                          <img class="rounded-3xl shadow-lg" src={ShowTime.movie.image} alt={ShowTime.movie.title}/>
+                      </div>
+                      <div class="flex flex-col w-1/2 space-y-4">
+                        <div class="flex justify-between items-start">
+                          <h2 class="text-3xl font-bold text-white">{ShowTime.movie.title}</h2>
+                          <div class="bg-yellow-400 font-bold rounded-xl p-2">7.2</div>
+                        </div>
+                        <div>
+                          <div class="text-sm text-gray-400">{ new Date(ShowTime.time).toDateString()}</div>
+                          <div class="text-lg text-gray-400">{ShowTime.room.name}</div>
+                        </div>
+                          <p class=" text-gray-400 max-h-40 overflow-y-hidden">{ShowTime.movie.description}</p>
+                        <div class="flex text-2xl font-bold text-gray-300">${ShowTime.price}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
           ))
         )}
-      </div>
+
+
     </div>
   </section>
   

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export default function AllMovies() {
+
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -23,7 +24,7 @@ export default function AllMovies() {
   }
 
   return (
-    <section className="w-full min-h-screen bg-gray-900 py-10">
+    <section className="w-full min-h-screen bg-gray-900 py-10 px-12">
     <div className="container mx-auto">
       <h2 className="text-3xl font-bold text-white text-center mb-8">Available Movies</h2>
       
@@ -32,19 +33,20 @@ export default function AllMovies() {
           <p className="text-white text-center col-span-full">No movies found</p>
         ) : (
           movies.map((movie) => (
-            <div key={movie._id} className="bg-gray-800 rounded-lg shadow-lg p-4 hover:shadow-2xl transition-shadow duration-300">
-              <img 
-                src={movie.image} 
-                alt={movie.title} 
-                className="w-full h-60 object-cover rounded-md mb-4" 
-              />
-              <h3 className="text-xl font-semibold text-white">{movie.title}</h3>
-              <p className="text-sm text-gray-400 mb-2">Release Date: {new Date(movie.relseDate).toDateString()}</p>
-              <p className="text-gray-300 mb-4">{movie.description}</p>
-              <button className="bg-blue-500 text-white py-2 px-4 rounded-lg w-full hover:bg-blue-600 transition-colors">
-                View Details
-              </button>
-            </div>
+            <div key={movie._id} className="bg-gray-800 rounded-lg shadow-lg flex flex-col p-4 hover:shadow-2xl transition-shadow duration-300">
+            <img 
+              src={movie.image} 
+              alt={movie.title} 
+              className="w-full h-100 object-cover rounded-md mb-4 overflow-visible hover:scale-110 transition-transform duration-300"
+            />
+            <h3 className="text-2xl font-bold text-white text-center mb-3">{movie.title}</h3>
+            <p className="text-sm text-gray-300 mb-3">{new Date(movie.relseDate).toLocaleDateString('en-US')}</p>
+            <p className="text-gray-300 mb-4 flex-grow">{movie.description}</p>
+            <button className="bg-blue-500 text-white py-2 px-4 rounded-lg w-full hover:bg-blue-600 transition-colors">
+              View Details
+            </button>
+          </div>
+          
           ))
         )}
       </div>
