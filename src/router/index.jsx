@@ -15,6 +15,7 @@ import AllMovies from "../components/home/movies";
 import Rooms from "../components/home/rooms";
 import NotFound from "../components/UI/404";
 import About from "../components/home/about";
+import MovieDetails from "../components/home/movieDetails";
 
 const router = createBrowserRouter([
     
@@ -65,6 +66,11 @@ const router = createBrowserRouter([
             {
                 path: "/about",
                 element: <About/>
+            },
+
+            {
+                path: "/movieDetails/:id",
+                element: <MovieDetails/>
             },
             
         ]},

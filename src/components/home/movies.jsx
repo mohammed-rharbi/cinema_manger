@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default function AllMovies() {
 
@@ -42,9 +43,13 @@ export default function AllMovies() {
             <h3 className="text-2xl font-bold text-white text-center mb-3">{movie.title}</h3>
             <p className="text-sm text-gray-300 mb-3">{new Date(movie.relseDate).toLocaleDateString('en-US')}</p>
             <p className="text-gray-300 mb-4 flex-grow">{movie.description}</p>
+
+            <Link to={`/movieDetails/${movie._id}`}>
             <button className="bg-blue-500 text-white py-2 px-4 rounded-lg w-full hover:bg-blue-600 transition-colors">
               View Details
             </button>
+            </Link>
+        
           </div>
           
           ))

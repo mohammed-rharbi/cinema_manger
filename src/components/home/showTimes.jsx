@@ -11,7 +11,6 @@ export default function ShowTimes() {
         const response = await axios.get('http://localhost:5000/api/showTime/allShowtimes');
 
         setShowTime(response.data.showTimes);
-        console.log(response.data);
       } catch (error) { 
         console.log(error);
       }
