@@ -16,6 +16,7 @@ import Rooms from "../components/home/rooms";
 import NotFound from "../components/UI/404";
 import About from "../components/home/about";
 import MovieDetails from "../components/home/movieDetails";
+import ShowTimeDetials from "../components/home/showTimeDetials";
 
 const router = createBrowserRouter([
     
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
         
 
         {
-            element: <CusLayout />,
+        element: <CusLayout />,
         children: [
             {
                 path: "/",
@@ -71,6 +72,11 @@ const router = createBrowserRouter([
             {
                 path: "/movieDetails/:id",
                 element: <MovieDetails/>
+            },
+
+            {
+                path: "/showTimeDetails/:id",
+                element: <ShowTimeDetials/>
             },
             
         ]},

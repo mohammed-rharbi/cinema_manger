@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default function ShowTimes() {
 
@@ -53,9 +54,13 @@ export default function ShowTimes() {
                         <div class="flex text-2xl font-bold text-gray-300">${ShowTime.price}</div>
                       </div>
                     </div>
+
                     <div className="flex justify-end mt-6 w-full ">
-                    <button className="bg-red-500 mr-4 hover:bg-red-600 text-white font-bold py-2 px-24 rounded" label={'Book Now'}>Book Now</button>
+                      <Link to={`/showTimeDetails/${ShowTime._id}`}>
+                      <button className="bg-red-500 mr-4 hover:bg-red-600 text-white font-bold py-2 px-24 rounded" >Book Now</button>
+                      </Link>
                     </div>
+
                   </div>
                 </div>
           ))

@@ -1,44 +1,49 @@
-import React from 'react'
-import axios from 'axios'
-import { useState , useEffect } from 'react'
-import { toast } from 'react-toastify'
+import React from 'react';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 
-export default function BookButton({ showTimeId , seatId , customerId }) {
+export default function BookButton({ showTimeId, seatId }) {
 
-    const handleReservation = () => {
+  console.log(showTimeId , seatId);
 
+    const handleReservation = async () => {
 
-        try{
+    const token = localStorage.getItem('authToken');
 
-            const res = axios.post('http://localhost:5000/api/booking/book', {
-               
-                showTimeId ,
-                seatId ,
-                customerId ,
-              
-            });
-
-            if(res.status === 200){
-
-                toast.success("Reservation Successful");
-            }
-
-        }catch(error){
-            console.log(error);
-            toast.error("Reservation Failed");
-        }
+    const config = {
+        headers: { 
+            'Content-Type': 'application/json', 
+            'Authorization': `Bearer ${token}`
+        },
     };
 
-  return (
+    try {
+      const res = await axios.post('http://localhost:5000/api/reservation/createReservation' ,{
+        showTimeId: showTimeId,
+        seateId: seatId,
+      }, config);
 
-    <div className="flex justify-end mt-8 w-full ">
+
+      if (res.status === 201) {
+        toast.success("Reservation Successful");
+        window.location.href = '/home';
+      } else {
+        toast.error("Reservation Failed"); 
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Reservation Failed");
+    }
+  };
+
+  return (
     <button
-    
-    onClick={handleReservation}
-    className="bg-red-500 mr-4 hover:bg-red-600 text-white font-bold py-2 px-24 rounded" label={'Book Now'}>
-    Book Now
+      onClick={handleReservation}
+      className="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded"
+    >
+      Book Now
     </button>
-    </div>
-  )
+  );
 }

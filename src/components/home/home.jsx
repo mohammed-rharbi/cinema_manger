@@ -12,6 +12,7 @@ export default function Home() {
 <div className="flex  justify-center flex-col text-center ">
 
 
+<video src=""></video>
 
 
 </div>    

@@ -20,6 +20,8 @@ const loginUser = async (userData) => {
         localStorage.setItem('authToken', data.token);
 
         const userRole = data.user.role;
+        const userId = data.user._id;
+        localStorage.setItem('userId', userId);
         localStorage.setItem('userRole', userRole);
 
         if(userRole === 'admin') {
