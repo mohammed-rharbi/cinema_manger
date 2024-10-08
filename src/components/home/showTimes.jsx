@@ -53,6 +53,9 @@ export default function ShowTimes() {
                         <div class="flex text-2xl font-bold text-gray-300">${ShowTime.price}</div>
                       </div>
                     </div>
+                    <div className="flex justify-end mt-6 w-full ">
+                    <button className="bg-red-500 mr-4 hover:bg-red-600 text-white font-bold py-2 px-24 rounded" label={'Book Now'}>Book Now</button>
+                    </div>
                   </div>
                 </div>
           ))

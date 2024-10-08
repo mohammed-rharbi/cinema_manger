@@ -10,7 +10,6 @@ import router from './router/index'
 
 function App() {
 
-
   return (
     <>
 <RouterProvider router={router} />

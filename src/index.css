@@ -16,14 +16,14 @@
   background-attachment: fixed;
 }
 
-#homi{
+/* #homi{
   height: 100vh;
   background-image: url('./public/images/homi.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-}
+} */
 
 #chape{
   height: 25%;
