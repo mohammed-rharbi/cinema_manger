@@ -2,8 +2,8 @@ import React from 'react'
 import Button from '../UI/button'
 import Slider from '../UI/slider'
 import { Link , useParams } from 'react-router-dom'
-import axios from 'axios'
 import { useState , useEffect } from 'react'
+import AxiosInstance from '../../services/axios'
 
 export default function MovieDetails() {
 
@@ -21,24 +21,24 @@ export default function MovieDetails() {
         const getMovie = async () => {
 
             try {
-            const response = await axios.get(`http://localhost:5000/api/movie/getMovie/${id}`);
+            const response = await AxiosInstance.get(`/movie/getMovie/${id}`);
             setMovie(response.data.movie);
             setShowTimes(response.data.showtimes);
             }catch(err){
 
-        console.log(err);
-    }finally{
+              console.log(err);
+              }finally{
 
-      setLoading(false)        
-    }
+                setLoading(false)        
+              }
 };
         
         getMovie();
     }, [])
 
     if(loading){
-      return <p>loading ....</p>
       
+      return <p>loading ....</p>
     }
 
     if(!movie){

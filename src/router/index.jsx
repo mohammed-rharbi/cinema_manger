@@ -17,11 +17,16 @@ import NotFound from "../components/UI/404";
 import About from "../components/home/about";
 import MovieDetails from "../components/home/movieDetails";
 import ShowTimeDetials from "../components/home/showTimeDetials";
+import Manage_rooms from "../components/admin/manage_rooms";
+import Manage_movies from "../components/admin/manage_movies";
+import Manage_users from "../components/admin/users";
+import Manage_showTimes from "../components/admin/manage_showTimes";
+import Manage_reservation from "../components/admin/manage_reservation";
 
 const router = createBrowserRouter([
     
     {
-        element: <Protection allowedRole={['admin']} element={<Layout />} />,
+        element: <Layout />,
         children: [
             {
                 path: "/dashboard",
@@ -29,9 +34,28 @@ const router = createBrowserRouter([
             },
           
             {
-                path: "/movies",
-                element: <Movie/>
+                path: "/Manage_movies",
+                element: <Manage_movies/>
             },
+
+            {
+                path: "/Manage_rooms",
+                element: <Manage_rooms/>
+            },
+            {
+                path: "/Manage_users",
+                element: <Manage_users/>
+            },
+            {
+                path: "/Manage_showes",
+                element: <Manage_showTimes/>
+            },
+
+            {
+                path: "/manage_reservations",
+                element: <Manage_reservation/>
+
+            }
             
         ]},
         

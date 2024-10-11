@@ -1,12 +1,14 @@
 import React from 'react'
-import axios from 'axios'
 import { useState , useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import BookButton from '../bookings/bookButton'
+import AxiosInstance from '../../services/axios'
+import Loading from '../UI/loading'
 
 export default function ShowTimeDetials() {
 
     const {id} = useParams();
+    const [loading , setLoading] = useState(true);
     const [showTime , setShowTime] = useState(null);
     const [selectedSeat , setSelectedSeat] = useState(null);
 
@@ -15,17 +17,26 @@ export default function ShowTimeDetials() {
         const getShowTimes = async () => {
 
             try {
-            const response = await axios.get(`http://localhost:5000/api/showTime/getShowTime/${id}`);
+            const response = await AxiosInstance.get(`/showTime/getShowTime/${id}`);
             setShowTime(response.data.showtimes);
 
-            } catch (error) {
+            }
+            catch (error) {
                 console.log(error);
+            }
+            finally{
+                setLoading(false)
             }
         }
 
         getShowTimes();
     } , []);
 
+
+    if(loading){
+
+        return <Loading/>
+    }
 
     if(!showTime) {
 

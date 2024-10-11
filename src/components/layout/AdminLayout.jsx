@@ -10,11 +10,13 @@ export default function Layout() {
    
    
 
-      <div className="flex min-h-screen">
+      <div className="grid grid-cols-12  min-h-screen">
 
-        <SideBar className="w-64 bg-gray-800 text-white" />
+      <div className='col-span-1 bg-gray-900 text-white'>
+      <SideBar />
+      </div>
 
-        <main className="flex-1 p-6 bg-gray-900">
+        <main className="col-span-11 p-6 bg-gray-900">
           <Outlet />
         </main>
       </div>

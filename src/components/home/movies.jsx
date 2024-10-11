@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
+import AxiosInstance from '../../services/axios';
 
 export default function AllMovies() {
 
@@ -9,7 +9,7 @@ export default function AllMovies() {
   useEffect(() => {
     const getMovies = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/movie/allMovies');
+        const response = await AxiosInstance.get('movie/allMovies');
 
         setMovies(response.data.movies);
       } catch (error) { 

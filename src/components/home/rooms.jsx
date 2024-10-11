@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import AxiosInstance from '../../services/axios';
 
 export default function Rooms() {
   const [rooms, setRooms] = useState([]);
@@ -7,7 +7,7 @@ export default function Rooms() {
   useEffect(() => {
     const getRooms = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/room/getRooms');
+        const response = await AxiosInstance.get('/room/getRooms');
 
         setRooms(response.data.rooms);
       } catch (error) { 
