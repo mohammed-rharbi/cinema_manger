@@ -20,7 +20,7 @@ import ShowTimeDetials from "../components/home/showTimeDetials";
 import Manage_rooms from "../components/admin/manage_rooms";
 import Manage_movies from "../components/admin/manage_movies";
 import Manage_users from "../components/admin/users";
-import Manage_showTimes from "../components/admin/manage_showTimes";
+import Manage_showTimes from "../components/admin/showTime_mangment";
 import Manage_reservation from "../components/admin/manage_reservation";
 
 const router = createBrowserRouter([

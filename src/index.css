@@ -12,7 +12,7 @@
   box-sizing: border-box;
 }
 
-body{
+#cover{
   height: 100vh;
   background-image: url('./public/images/cover.jpg');
   background-repeat: no-repeat;

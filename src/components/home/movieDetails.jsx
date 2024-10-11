@@ -4,6 +4,7 @@ import Slider from '../UI/slider'
 import { Link , useParams } from 'react-router-dom'
 import { useState , useEffect } from 'react'
 import AxiosInstance from '../../services/axios'
+import Loading from '../UI/loading'
 
 export default function MovieDetails() {
 
@@ -27,6 +28,7 @@ export default function MovieDetails() {
             }catch(err){
 
               console.log(err);
+              
               }finally{
 
                 setLoading(false)        
@@ -37,13 +39,13 @@ export default function MovieDetails() {
     }, [])
 
     if(loading){
-      
-      return <p>loading ....</p>
+
+      return <Loading />
     }
 
     if(!movie){
 
-      return <p>Not found</p>
+      return <p>movie Not found</p>
 
     }
    
