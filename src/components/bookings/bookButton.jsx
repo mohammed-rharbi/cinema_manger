@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
+import { Navigate } from 'react-router-dom';
 
 
 export default function BookButton({ showTimeId, seatId }) {
@@ -28,13 +29,13 @@ export default function BookButton({ showTimeId, seatId }) {
 
       if (res.status === 201) {
         toast.success("Reservation Successful");
-        window.location.href = '/home';
+        Navigate({to:'/'});
+
       } else {
         toast.error("Reservation Failed"); 
       }
     } catch (error) {
       console.error(error);
-      toast.error("Reservation Failed");
     }
   };
 

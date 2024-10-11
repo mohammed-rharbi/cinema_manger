@@ -9,7 +9,7 @@ export default function MovieDetails() {
 
 
 
-      
+    const [loading , setLoading] = useState(true); 
     const { id } = useParams();
     const [movie , setMovie] = useState(null);
     const [ShowTimes , setShowTimes] = useState([]);
@@ -23,22 +23,30 @@ export default function MovieDetails() {
             try {
             const response = await axios.get(`http://localhost:5000/api/movie/getMovie/${id}`);
             setMovie(response.data.movie);
-            setShowTimes(response.data.showtimes);        
+            setShowTimes(response.data.showtimes);
             }catch(err){
 
         console.log(err);
+    }finally{
+
+      setLoading(false)        
     }
 };
         
         getMovie();
     }, [])
 
+    if(loading){
+      return <p>loading ....</p>
+      
+    }
 
     if(!movie){
 
-        return <p>No movie found</p>
-    }
+      return <p>Not found</p>
 
+    }
+   
   return (
     
 

@@ -1,18 +1,19 @@
 version: '3'
 services:
   backend:
-    build: ./backend
+    build: ./Cin-Manager/dockerfile
     ports:
       - "5000:5000"
     environment:
       - NODE_ENV=development
+      - MONGO_URL=mongodb://localhost:27017/cinemaManger
     volumes:
-      - ./backend:/app
+      - ./Cin-Manager/:/app
     depends_on:
       - mongo
 
   frontend:
-    build: ./frontend
+    build: ./dockerfile
     ports:
       - "3000:3000"
     environment:
@@ -23,7 +24,7 @@ services:
       - backend
 
   mongo:
-    image: mongo
+    image: mongo:latest
     ports:
       - "27017:27017"
     volumes:

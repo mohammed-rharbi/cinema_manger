@@ -1,6 +1,6 @@
 FROM node:18
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
 COPY package.json package-lock.json ./
 
@@ -8,6 +8,10 @@ RUN npm install
 
 COPY . .
 
-CMD ["npm", "run" , "dev"]
+RUN npm run build
 
-EXPOSE 3000
+FROM nginx:alpine
+
+COPY --from=0 /app/dist /usr/share/nginx/html
+
+EXPOSE 80
