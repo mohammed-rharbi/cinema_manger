@@ -1,7 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 export default function sideBar() {
+
+
+  const Logout = () => {
+
+  
+    localStorage.removeItem('authToken')
+  
+    toast.success('Logout successfully')
+    window.location.href = '/login'
+    
+  }
+  
   return (
     
     <div class="fixed h-screen  bg-gray-800">  
@@ -58,7 +71,7 @@ export default function sideBar() {
 
 </ul>
       <div class="mt-auto h-16 flex items-center w-full">
-        <button class="h-16 w-10 mx-auto flex flex justify-center items-center w-full focus:text-orange-500 hover:bg-red-200 focus:outline-none">
+        <button onClick={() => Logout()} class="h-16 w-10 mx-auto flex flex justify-center items-center w-full focus:text-orange-500 hover:bg-red-200 focus:outline-none">
          <span class="material-symbols-outlined">logout</span>
         </button>
       </div>

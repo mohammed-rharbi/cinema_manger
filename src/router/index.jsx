@@ -19,9 +19,10 @@ import MovieDetails from "../components/home/movieDetails";
 import ShowTimeDetials from "../components/home/showTimeDetials";
 import Manage_rooms from "../components/admin/manage_rooms";
 import Manage_movies from "../components/admin/manage_movies";
-import Manage_users from "../components/admin/users";
+import Manage_users from "../components/admin/customers";
 import Manage_showTimes from "../components/admin/showTime_mangment";
 import Manage_reservation from "../components/admin/manage_reservation";
+import Admins from "../components/admin/admins";
 
 const router = createBrowserRouter([
     
@@ -54,6 +55,12 @@ const router = createBrowserRouter([
             {
                 path: "/manage_reservations",
                 element: <Manage_reservation/>
+
+            },
+
+            {
+                path: "/admins",
+                element: <Admins/>
 
             }
             
