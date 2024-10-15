@@ -4,7 +4,7 @@ import { useState , useEffect } from 'react'
 import Loading from '../UI/loading';
 import { Link } from 'react-router-dom';
 import CreateMovie from './movie/createMovie'
-import AddVideo from './movie/addVideo'
+import DeleteMovie from './movie/deleteMovie';
 
 
 export default function Mange_movies() {
@@ -109,9 +109,8 @@ export default function Mange_movies() {
                 </div>
 
             <div className='flex justify-center gap-3 text-center mt-14 border-t'>
-                <button className='bg-red-500 text-white px-3 py-1 mt-4 rounded-xl hover:scale-110 hover:bg-red-600 hover:box-shadow-2xl'>
-                <span className="material-symbols-outlined">delete</span>
-                </button>
+
+                <DeleteMovie id={movie._id}/>
 
                 <button className='bg-blue-500 text-white px-3 py-1 mt-4 rounded-xl hover:scale-110 hover:bg-blue-600 hover:box-shadow-2xl'>
                 <span className="material-symbols-outlined">edit</span>
