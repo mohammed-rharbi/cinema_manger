@@ -24,6 +24,7 @@ import Manage_showTimes from "../components/admin/showTime_mangment";
 import Manage_reservation from "../components/admin/manage_reservation";
 import Admins from "../components/admin/admins";
 import WatchMovie from "../components/home/watchMovie";
+import AddVideo from "../components/admin/movie/addVideo";
 
 const router = createBrowserRouter([
     
@@ -62,6 +63,12 @@ const router = createBrowserRouter([
             {
                 path: "/admins",
                 element: <Admins/>
+
+            },
+
+            {
+                path: "/add_video/:id",
+                element: <AddVideo/>
 
             }
             
@@ -115,7 +122,8 @@ const router = createBrowserRouter([
                 path: "/watch_now/:id",
                 element: <WatchMovie/>
             
-            }
+            },
+
         ]},
 
 

@@ -57,7 +57,7 @@ export default function WatchMovie() {
      
 
      <div className='w-full text-center mb-6'>
-      <h1 class="title-font sm:text-3xl text-2xl font-medium text-white mb-4">{movie.title}</h1>
+      <h1 class="sm:text-4xl text-red-500  font-manrope mb-4">{movie.title}</h1>
      </div>
 
     <div className='w-full flex justify-center'>

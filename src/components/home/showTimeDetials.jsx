@@ -77,7 +77,7 @@ export default function ShowTimeDetials() {
     </div>
     
       <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-      {/* <img alt="ecommerce" class=" object-cover object-center h-96  rounded border border-gray-200" src={showTime.movie.image}/> */}
+      
         <h1 class="text-red-500 text-4xl title-font font-semibold mb-3">{showTime.movie.title}</h1>
         <div class="flex mb-4">
           <span className='text-gray-300 mt-4'><span className='text-red-500 font-bold'>Time :</span> { new Date(showTime.time).toDateString()}</span>

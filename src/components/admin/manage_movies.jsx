@@ -103,9 +103,9 @@ export default function Mange_movies() {
 
                 <div className='text-center'>
                     <h1 className=' font-semibold text-lg mt-4'>{movie.title}</h1>
-                    {/* <p className='text-sm mt-2'>{customers.email}</p>
-                    <p className='text-sm mt-2'>{customers.role}</p>
-                    <p className='text-sm mt-2'>joind on <span className='font-bold text-red-400'>{new Date(customers.createdAt).toDateString()}</span></p> */}
+                    {/* <p className='text-sm mt-2'>{movie.email}</p>
+                    <p className='text-sm mt-2'>{movie.role}</p>
+                    <p className='text-sm mt-2'>joind on <span className='font-bold text-red-400'>{new Date(movie.relesDate).toDateString()}</span></p> */}
                 </div>
 
             <div className='flex justify-center gap-3 text-center mt-14 border-t'>
@@ -117,9 +117,13 @@ export default function Mange_movies() {
                 <span className="material-symbols-outlined">edit</span>
                 </button>
 
-                <button onClick={()=> setShowpop(true)} className='bg-green-500 text-white px-3 py-1 mt-4 rounded-xl hover:scale-110 hover:bg-green-600 hover:box-shadow-2xl'>
+
+                <Link to={`/add_video/${movie._id}`}>
+                <button className='bg-green-500 text-white px-3 py-1 mt-4 rounded-xl hover:scale-110 hover:bg-green-600 hover:box-shadow-2xl'>
                 <span class="material-symbols-outlined">video_camera_back_add</span>
                 </button>
+                </Link>        
+               
             </div>
 
             </div>
