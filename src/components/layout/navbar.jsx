@@ -44,7 +44,7 @@ const Logout = () => {
       <Link to={'/rooms'}><li class="md:px-4 md:py-2 hover:text-yellow-400">Rooms</li></Link>
       <Link to={'/about'}><li class="md:px-4 md:py-2 hover:text-yellow-400">About Us</li></Link>
 
-			</ul>
+			</ul> 
 		</div>
 
 

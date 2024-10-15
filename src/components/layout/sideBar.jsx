@@ -20,9 +20,7 @@ export default function sideBar() {
     <div class="fixed h-screen  bg-gray-800">  
     <aside id='sidebar' class="flex flex-col items-center text-gray-700 shadow h-full">
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-
-
+  
 
     <div class="h-16 mt-4 flex items-center w-full">
     <Link to={'/dashboard'} className="h-24 w-24 mx-auto">

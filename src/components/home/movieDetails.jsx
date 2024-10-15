@@ -55,8 +55,24 @@ export default function MovieDetails() {
 <section class="text-gray-700 body-font overflow-hidden bg-gray-900">
   <div class="container px-5 py-24 mx-auto">
     <div class="lg:w-4/5 mx-auto flex flex-wrap">
-      <img alt="ecommerce" class="lg:w-1/2  w-full object-cover object-center h-96  rounded border border-gray-200" src={movie.image}/>
-      <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+
+<Link to={`/watch_now/${movie._id}`}>
+<button className=' bg-red-500 rounded-2xl text-white flex justify-center font-bold text-lg hover:bg-red-600  items-center w-32 h-32'>
+  Watch Now
+</button>
+</Link>
+
+
+      <img alt="ecommerce" class=" w-70 h-96 ml-32  object-center h-96  rounded border border-gray-200" src={movie.image}/>
+
+     
+      {/* <video width="600"  class="lg:w-1/2  w-full object-cover object-center h-96  rounded border border-gray-200" controls>
+        <source src={movie.video} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video> */}
+
+
+      <div class="lg:w-1/2 ml-2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
         <h1 class="text-red-500 text-4xl  title-font font-semibold mb-1">{movie.title}</h1>
         <div class="flex mb-4">
           <span className='text-gray-300 mt-4'>Release Date : { new Date(movie.relseDate).toDateString()}</span>
