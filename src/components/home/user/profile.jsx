@@ -38,7 +38,7 @@ export default function Profile() {
                                                 d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z">
                                             </path>
                                         </svg>
-                                    </label>
+                                </label>
                             </div>
                         </div>
                         <div className="flex justify-end">
@@ -69,34 +69,36 @@ export default function Profile() {
 
                     <div className="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col gap-2 justify-center w-full">
                         <div className="w-full  mb-4 mt-6">
-                            <label htmlFor="" className="mb-2 dark:text-gray-300">First Name</label>
+                            <label htmlFor="" className="mb-2 dark:text-gray-300">Name</label>
                             <input type="text"
                                     className="mt-2 p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800"
                                     placeholder="First Name"/>
                         </div>
                         <div className="w-full  mb-4 lg:mt-6">
-                            <label htmlFor="" className=" dark:text-gray-300">Last Name</label>
-                            <input type="text"
+                            <label htmlFor="" className=" dark:text-gray-300">Email</label>
+                            <input type="email"
                                     className="mt-2 p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800"
-                                    placeholder="Last Name"/>
+                                    placeholder="Last Name"
+                                    />
                         </div>
                     </div>
 
                     <div className="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col gap-2 justify-center w-full">
-                        <div className="w-full">
-                            <h3 className="dark:text-gray-300 mb-2">Sex</h3>
-                            <select
-                                    className="w-full text-grey border-2 rounded-lg p-4 pl-2 pr-2 dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800">
-                                    <option disabled value="">Select Sex</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                </select>
-                        </div>
-                        <div className="w-full">
-                            <h3 className="dark:text-gray-300 mb-2">Date Of Birth</h3>
-                            <input type="date"
-                                    className="text-grey p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800"/>
-                        </div>
+                    <div className="w-full  mb-4 lg:mt-6">
+                            <label htmlFor="" className=" dark:text-gray-300">Email</label>
+                            <input type="email"
+                                    className="mt-2 p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800"
+                                    placeholder="Last Name"
+                                    />
+                    </div>
+
+                    <div className="w-full  mb-4 lg:mt-6">
+                            <label htmlFor="" className=" dark:text-gray-300">Email</label>
+                            <input type="email"
+                                    className="mt-2 p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800"
+                                    placeholder="Last Name"
+                                    />
+                    </div>
                     </div>
 
                     <div className="w-100 rounded-lg bg-blue-500 mt-4 text-white text-lg font-semibold">
