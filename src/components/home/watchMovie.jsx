@@ -3,6 +3,7 @@ import { Link , useParams } from 'react-router-dom'
 import { useState , useEffect } from 'react'
 import AxiosInstance from '../../services/axios'
 import Loading from '../UI/loading'
+import ReactPlayer from 'react-player'
 
 export default function WatchMovie() {
 
@@ -61,10 +62,19 @@ export default function WatchMovie() {
      </div>
 
     <div className='w-full flex justify-center'>
-            <video width="800"  class="w-200 h-200 object-cover object-center h-96  rounded border border-gray-200" controls>
+
+
+      <ReactPlayer
+      
+      url={movie.video}
+      controls={true}
+       width={800}
+       height={400}
+      />
+            {/* <video width="800"  class="w-200 h-200 object-cover object-center h-96  rounded border border-gray-200" controls>
             <source src={movie.video} type="video/mp4" />
             Your browser does not support the video tag.
-            </video>
+            </video> */}
     </div>
     
     </div>
