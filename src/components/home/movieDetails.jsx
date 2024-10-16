@@ -56,21 +56,13 @@ export default function MovieDetails() {
   <div class="container px-5 py-24 mx-auto">
     <div class="lg:w-4/5 mx-auto flex flex-wrap">
 
-<Link to={`/watch_now/${movie._id}`}>
-<button className=' bg-red-500 rounded-2xl text-white flex justify-center font-bold text-lg hover:bg-red-600  items-center w-32 h-32'>
-  Watch Now
-</button>
-</Link>
 
+      <div>
 
-      <img alt="ecommerce" class=" w-70 h-96 ml-32  object-center h-96  rounded border border-gray-200" src={movie.image}/>
+      <img alt="ecommerce" class=" w-84 h-105 ml-32  object-center h-96  rounded border border-gray-200" src={movie.image}/>
 
-     
-      {/* <video width="600"  class="lg:w-1/2  w-full object-cover object-center h-96  rounded border border-gray-200" controls>
-        <source src={movie.video} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video> */}
-
+      </div>
+ 
 
       <div class="lg:w-1/2 ml-2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
         <h1 class="text-red-500 text-4xl  title-font font-semibold mb-1">{movie.title}</h1>
@@ -83,6 +75,11 @@ export default function MovieDetails() {
         <div class="flex mb-4">
           <span className='text-gray-300 mt-2'>Duration : {movie.duration} Min</span>
         </div>
+
+        <div class="flex mb-4">
+          <span className='text-gray-300 mt-2'>Gen : {movie.gen} Min</span>
+        </div>
+
         <p class="leading-relaxed"></p>
         <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
 
@@ -90,11 +87,21 @@ export default function MovieDetails() {
 
         </div>
         <div class="flex">
+
+    
           <button class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
             <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
               <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
             </svg>
           </button>
+
+
+          <Link className='flex justify-end w-full' to={`/watch_now/${movie._id}`}>
+            <button className="flex  ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">Watch Now
+            </button>
+          </Link>
+        
+
         </div>
       </div>
     </div>

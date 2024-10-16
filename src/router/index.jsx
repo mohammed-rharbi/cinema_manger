@@ -25,6 +25,7 @@ import Manage_reservation from "../components/admin/manage_reservation";
 import Admins from "../components/admin/admins";
 import WatchMovie from "../components/home/watchMovie";
 import AddVideo from "../components/admin/movie/addVideo";
+import Profile from "../components/home/user/profile";
 
 const router = createBrowserRouter([
     
@@ -123,6 +124,11 @@ const router = createBrowserRouter([
                 element: <WatchMovie/>
             
             },
+
+            {
+                path: "/user_profile",
+                element: <Profile/>
+            }
 
         ]},
 

@@ -94,21 +94,21 @@ export default function Mange_movies() {
         
         { Array.isArray(movies) && movies.map((movie) => (
 
-        <div key={movie._id} className='p-7 bg-gray-700 text-white rounded-xl w-60 h-full border border-red-500 box-shadow-2xl hover:scale-105'>
+        <div key={movie._id} className='p-7 bg-gray-700 text-white rounded-xl w-60 h-120 border border-red-500 box-shadow-2xl hover:scale-105'>
 
             <div>
                 <img src={movie.image}
-                className='w-80 h-70 mx-auto hover:scale-110 border-2 border-gray-900 '
+                className='w-80 h-72 mx-auto hover:scale-110 border-2 border-gray-900 '
                 alt={movie.title} />
 
-                <div className='text-center'>
+                <div className='h-16 text-center'>
                     <h1 className=' font-semibold text-lg mt-4'>{movie.title}</h1>
                     {/* <p className='text-sm mt-2'>{movie.email}</p>
                     <p className='text-sm mt-2'>{movie.role}</p>
                     <p className='text-sm mt-2'>joind on <span className='font-bold text-red-400'>{new Date(movie.relesDate).toDateString()}</span></p> */}
                 </div>
 
-            <div className='flex justify-center gap-3 text-center mt-14 border-t'>
+            <div className='flex justify-center  gap-3 text-center mt-14 border-t'>
 
                 <DeleteMovie id={movie._id}/>
 

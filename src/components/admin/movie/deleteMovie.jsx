@@ -3,6 +3,7 @@ import { useState , useEffect } from 'react'
 import AxiosInstance from '../../../services/axios'
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 
 
@@ -38,12 +39,19 @@ const navigate = useNavigate()
 
 const handleDelete = async ()=>{
 
-  const confirm = window.confirm('are you sure you want to delete this movie');
+  const result = await Swal.fire({
+    title: 'Are you sure?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Yes, delete it!',
+    cancelButtonText: 'Cancel',
+  });
 
-  if(confirm){
+  if(result.isConfirmed){
 
     const secc = await deleteMovie(id);
     if(secc){
+      Swal.fire('Deleted!', '', 'success');
       navigate('/Manage_movies')
     }
   }
