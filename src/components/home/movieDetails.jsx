@@ -6,6 +6,7 @@ import { useState , useEffect } from 'react'
 import AxiosInstance from '../../services/axios'
 import Loading from '../UI/loading'
 import FavoriteButton from '../home/favorite/favoriteButton'
+import Rating from '../admin/movie/rating'
 
 export default function MovieDetails() {
 
@@ -87,17 +88,19 @@ export default function MovieDetails() {
             <p className='text-gray-300'>{movie.description}</p>
 
         </div>
-        <div class="flex">
+        <div class="flex justify-center gap-24">
 
     
           <FavoriteButton movieId={movie._id}/>
 
-          <Link className='flex justify-end w-full' to={`/watch_now/${movie._id}`}>
+          <Rating movieId={movie._id}/>
+
+
+          <Link className='flex justify-end' to={`/watch_now/${movie._id}`}>
             <button className="flex  ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">Watch Now
             </button>
           </Link>
         
-
         </div>
       </div>
     </div>
@@ -137,7 +140,6 @@ export default function MovieDetails() {
                     </Link>
                     
                     </div>
-
                   </div>
                 </div>
           ))
