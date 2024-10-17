@@ -1,11 +1,12 @@
 import React from 'react'
+import Favorites from './favorites'
 
 export default function Profile() {
   return (
 
 
 <section className="py-14 my-auto dark:bg-gray-900">
-    <div className="lg:w-[80%] md:w-[90%] xs:w-[96%] mx-auto flex gap-4">
+    <div className="lg:w-[80%] md:w-[90%] xs:w-[96%] mx-auto flex gap-4 ">
         <div
             className="lg:w-[88%] md:w-[80%] sm:w-[88%] xs:w-full mx-auto shadow-2xl p-4 rounded-xl h-fit self-center dark:bg-gray-800/40">
 
@@ -108,6 +109,16 @@ export default function Profile() {
             </div>
         </div>
     </div>
+
+
+    <div className='text-center mt-12 mb-4 bold text-3xl' >
+        <h1 className='text-white'>My Favorit Movies</h1>
+    </div>
+
+<div className='w-full h-full flex justify-center item-center mt-12 '>
+
+<Favorites/>
+</div>
 </section>
 
   )

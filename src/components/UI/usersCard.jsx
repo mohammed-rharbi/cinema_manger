@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function UsersCard({ id, image, name, email, role, date, isAdmin}) {
+export default function UsersCard({ id, image, name, email, role, date, isAdmin , handleDelete}) {
   return (
 
 
@@ -31,7 +31,7 @@ export default function UsersCard({ id, image, name, email, role, date, isAdmin}
         </div>
 
         <div className='text-center mt-14 border-t'>
-            <button className='bg-red-500 text-white px-3 py-1 mr-6 mt-4 rounded-xl hover:scale-110 hover:bg-red-600 hover:box-shadow-2xl'>
+            <button onClick={handleDelete} className='bg-red-500 text-white px-3 py-1 mr-6 mt-4 rounded-xl hover:scale-110 hover:bg-red-600 hover:box-shadow-2xl'>
             <span className="material-symbols-outlined">delete</span>
             </button>
 
