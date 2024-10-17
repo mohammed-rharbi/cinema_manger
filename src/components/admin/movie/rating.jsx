@@ -41,7 +41,7 @@ export default function Rating({movieId}) {
         <span
           key={num}
           onClick={() => handleRating(num)}
-          style={{ fontSize:30 , cursor: 'pointer', color: num <= rate ? 'gold' : 'gray' }}
+          style={{ fontSize:28 , cursor: 'pointer', color: num <= rate ? 'gold' : 'gray' }}
         >
           ★
         </span>

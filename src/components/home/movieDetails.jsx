@@ -88,7 +88,7 @@ export default function MovieDetails() {
             <p className='text-gray-300'>{movie.description}</p>
 
         </div>
-        <div class="flex justify-center gap-24">
+        <div class="flex justify-center gap-32">
 
     
           <FavoriteButton movieId={movie._id}/>
