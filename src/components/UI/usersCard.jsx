@@ -1,6 +1,61 @@
 import React from 'react'
+import Swal from 'sweetalert2';
+import AxiosInstance from '../../services/axios';
+import { toast } from 'react-toastify';
 
-export default function UsersCard({ id, image, name, email, role, date, isAdmin , handleDelete}) {
+
+
+const deleteUser = async (id) => {
+
+    try{
+  
+        console.log('Deleting admin with ID:', id); 
+  
+        const res = await AxiosInstance.delete(`/admin/deleteAdmin/${id}`);
+
+        if(res.status === 200){
+          toast.success('Admin was deleted successfully')
+          return true ;
+        }else{
+  
+          throw new Error('failed to delete the movie');
+          // console.log('somthing wrong happend');
+        }
+    }catch(err){
+      console.log(err);
+      return false;
+    }
+  
+  }
+  
+
+
+
+export default function UsersCard({ id, image, name, email, role, date, isAdmin }) {
+
+
+
+    const handleDelete = async (id)=>{
+
+        const result = await Swal.fire({
+          title: 'Are you sure you want to delete this user?',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonText: 'Yes, delete it!',
+          cancelButtonText: 'Cancel',
+        });
+      
+        if(result.isConfirmed){
+      
+          const secc = await deleteUser(id);
+          if(secc){
+            Swal.fire('Deleted!', '', 'success');
+            navigate('/admins')
+          }
+        }
+      
+      }
+
   return (
 
 
@@ -31,7 +86,8 @@ export default function UsersCard({ id, image, name, email, role, date, isAdmin 
         </div>
 
         <div className='text-center mt-14 border-t'>
-            <button onClick={handleDelete} className='bg-red-500 text-white px-3 py-1 mr-6 mt-4 rounded-xl hover:scale-110 hover:bg-red-600 hover:box-shadow-2xl'>
+
+            <button onClick={()=> handleDelete(id)} className='bg-red-500 text-white px-3 py-1 mr-6 mt-4 rounded-xl hover:scale-110 hover:bg-red-600 hover:box-shadow-2xl'>
             <span className="material-symbols-outlined">delete</span>
             </button>
 

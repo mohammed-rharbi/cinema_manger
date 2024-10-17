@@ -4,8 +4,29 @@ import { useState , useEffect } from 'react'
 import Loading from '../UI/loading';
 import AdminNav from '../UI/adminNav';
 import UsersCard from '../UI/usersCard';
+import { toast } from 'react-toastify';
 
 
+
+const deletAdmin = async (AdminId)=>{
+
+
+    try{
+
+        const res = await AxiosInstance.delete(`/admin/deleteAdmin/${AdminId}`);
+
+        if(res.status === 200){
+
+            toast.success('admin deletd successfully');
+        }
+
+    }catch(err){
+
+        console.log(err)
+    }
+
+
+}
 
 export default function Admins() {
 
@@ -74,9 +95,9 @@ export default function Admins() {
          
         { Array.isArray(admins) && admins.map((admin) => (
 
-<UsersCard  id={admin._id} name={admin.name} email={admin.email} role={admin.role} date={admin.createdAt} 
+        <UsersCard  id={admin._id} name={admin.name} email={admin.email} role={admin.role} date={admin.createdAt} 
 
-isAdmin={true}/>
+        isAdmin={true} />
     
     ))}
     </div>

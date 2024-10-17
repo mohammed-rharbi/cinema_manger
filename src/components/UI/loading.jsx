@@ -7,8 +7,8 @@ export default function Loading() {
 
     <div id='loading'>
 
-<div class="jelly"></div>
-<svg width="0" height="0" class="jelly-maker">
+<div className="jelly"></div>
+<svg width="0" height="0" className="jelly-maker">
   <defs>
     <filter id="uib-jelly-ooze">
       <feGaussianBlur in="SourceGraphic" stdDeviation="6.25" result="blur"></feGaussianBlur>

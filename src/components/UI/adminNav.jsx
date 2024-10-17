@@ -23,7 +23,7 @@ export default function AdminNav() {
 
 <Link to={'/Manage_users'}>
 <div id='navv' className='bg-blue-700 h-24 w-80 rounded-3xl box-shadow-2xl text-center hover:scale-105 text-white hover:bg-blue-800 hover:box-shadow-2xl'>
-<span class="material-symbols-outlined">person</span>
+<span className="material-symbols-outlined">person</span>
      
 </div>
 </Link>

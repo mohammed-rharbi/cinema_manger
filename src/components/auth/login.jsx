@@ -11,6 +11,8 @@ import axios from 'axios'
 
 const loginUser = async (userData) => {
   try {
+
+      console.log(userData);
       const response = await axios.post('http://localhost:5000/api/auth/login', userData);
 
       const data =  response.data;
