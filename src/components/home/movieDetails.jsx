@@ -7,6 +7,7 @@ import AxiosInstance from '../../services/axios'
 import Loading from '../UI/loading'
 import FavoriteButton from '../home/favorite/favoriteButton'
 import Rating from '../admin/movie/rating'
+import Rate from '../admin/movie/rate'
 
 export default function MovieDetails() {
 
@@ -88,6 +89,10 @@ export default function MovieDetails() {
             <p className='text-gray-300'>{movie.description}</p>
 
         </div>
+
+        
+        <Rate movieId={movie._id}/>
+
         <div class="flex justify-center gap-32">
 
     
