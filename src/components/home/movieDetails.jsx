@@ -8,10 +8,11 @@ import Loading from '../UI/loading'
 import FavoriteButton from '../home/favorite/favoriteButton'
 import Rating from '../admin/movie/rating'
 import Rate from '../admin/movie/rate'
+import Comments from './user/comments'
+
+
 
 export default function MovieDetails() {
-
-
 
     const [loading , setLoading] = useState(true); 
     const { id } = useParams();
@@ -109,6 +110,9 @@ export default function MovieDetails() {
         </div>
       </div>
     </div>
+
+<Comments movieId={movie._id}/>
+
   </div>
   <div className="mx-auto">
       <h3 className="text-3xl font-bold text-white text-center mb-8">Available ShowTimes For : <span className="text-red-500">{movie.title}</span>
