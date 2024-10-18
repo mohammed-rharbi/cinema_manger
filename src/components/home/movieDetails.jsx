@@ -111,7 +111,6 @@ export default function MovieDetails() {
       </div>
     </div>
 
-<Comments movieId={movie._id}/>
 
   </div>
   <div className="mx-auto">
@@ -153,6 +152,8 @@ export default function MovieDetails() {
                 </div>
           ))
         )}
+
+<Comments movieId={movie._id}/>
 
 
     </div>
