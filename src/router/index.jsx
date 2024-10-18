@@ -13,7 +13,7 @@ import Movie from "../components/home/movies";
 import ResetPassword from "../components/auth/resetPassword";
 import AllMovies from "../components/home/movies";
 import Rooms from "../components/home/rooms";
-import NotFound from "../components/UI/404";
+import NotFound from "../components/UI/404";    
 import About from "../components/home/about";
 import MovieDetails from "../components/home/movieDetails";
 import ShowTimeDetials from "../components/home/showTimeDetials";

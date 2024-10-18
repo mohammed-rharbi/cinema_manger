@@ -92,7 +92,7 @@ export default function MovieDetails() {
         </div>
 
         
-        {/* <Rate movieId={movie._id}/> */}
+        <Rate movieId={movie._id}/>
 
         <div className="flex justify-center gap-32">
 
