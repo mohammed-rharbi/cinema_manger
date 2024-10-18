@@ -9,7 +9,7 @@ import FavoriteButton from '../home/favorite/favoriteButton'
 import Rating from '../admin/movie/rating'
 import Rate from '../admin/movie/rate'
 import Comments from './user/comments'
-
+import AddComment from './user/addComment'
 
 
 export default function MovieDetails() {
@@ -153,10 +153,13 @@ export default function MovieDetails() {
           ))
         )}
 
-<Comments movieId={movie._id}/>
-
-
     </div>
+
+<div className=''>
+<AddComment movieId={movie._id}/>
+<Comments movieId={movie._id}/>
+</div>
+
 </section>
 
 )}
