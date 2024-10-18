@@ -55,45 +55,45 @@ export default function MovieDetails() {
   return (
     
 
-<section class="text-gray-700 body-font overflow-hidden bg-gray-900">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="lg:w-4/5 mx-auto flex flex-wrap">
+<section className="text-gray-700 body-font overflow-hidden bg-gray-900">
+  <div className="container px-5 py-24 mx-auto">
+    <div className="lg:w-4/5 mx-auto flex flex-wrap">
 
 
       <div>
 
-      <img alt="ecommerce" class=" w-84 h-105 ml-32  object-center h-96  rounded border border-gray-200" src={movie.image}/>
+      <img alt="ecommerce" className=" w-84 h-105 ml-32  object-center h-96  rounded border border-gray-200" src={movie.image}/>
 
       </div>
  
 
-      <div class="lg:w-1/2 ml-2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-        <h1 class="text-red-500 text-4xl  title-font font-semibold mb-1">{movie.title}</h1>
-        <div class="flex mb-4">
+      <div className="lg:w-1/2 ml-2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+        <h1 className="text-red-500 text-4xl  title-font font-semibold mb-1">{movie.title}</h1>
+        <div className="flex mb-4">
           <span className='text-gray-300 mt-4'>Release Date : { new Date(movie.relseDate).toDateString()}</span>
         </div>
-        <div class="flex mb-4">
+        <div className="flex mb-4">
           <span className='text-gray-300 mt-2'>Deroctor : {movie.deroctor}</span>
         </div>
-        <div class="flex mb-4">
+        <div className="flex mb-4">
           <span className='text-gray-300 mt-2'>Duration : {movie.duration} Min</span>
         </div>
 
-        <div class="flex mb-4">
+        <div className="flex mb-4">
           <span className='text-gray-300 mt-2'>Gen : {movie.gen} Min</span>
         </div>
 
-        <p class="leading-relaxed"></p>
-        <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
+        <p className="leading-relaxed"></p>
+        <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
 
             <p className='text-gray-300'>{movie.description}</p>
 
         </div>
 
         
-        <Rate movieId={movie._id}/>
+        {/* <Rate movieId={movie._id}/> */}
 
-        <div class="flex justify-center gap-32">
+        <div className="flex justify-center gap-32">
 
     
           <FavoriteButton movieId={movie._id}/>
@@ -120,22 +120,22 @@ export default function MovieDetails() {
 
           ShowTimes.map((ShowTime) => (
 
-                <div class="flex justify-center items-center flex-row space-y-12 py-12 w-full h-auto mb-24  mx-auto">
-                <div key={ShowTime._id}  class="py-3 sm:max-w-xl sm:mx-auto">
-                    <div class="bg-gray-800 shadow-lg border-gray-100 max-h-80	 border sm:rounded-3xl p-8 flex space-x-8">
-                      <div class="h-48 overflow-visible w-1/2">
-                          <img class="rounded-3xl shadow-lg" src={movie.image}/>
+                <div className="flex justify-center items-center flex-row space-y-12 py-12 w-full h-auto mb-24  mx-auto">
+                <div key={ShowTime._id}  className="py-3 sm:max-w-xl sm:mx-auto">
+                    <div className="bg-gray-800 shadow-lg border-gray-100 max-h-80	 border sm:rounded-3xl p-8 flex space-x-8">
+                      <div className="h-48 overflow-visible w-1/2">
+                          <img className="rounded-3xl shadow-lg" src={movie.image}/>
                       </div>
-                      <div class="flex flex-col w-1/2 space-y-4">
-                        <div class="flex justify-between items-start">
-                          <h2 class="text-3xl font-bold text-white">{movie.title}</h2>
-                          <div class="bg-yellow-400 font-bold rounded-xl p-2">7.2</div>
+                      <div className="flex flex-col w-1/2 space-y-4">
+                        <div className="flex justify-between items-start">
+                          <h2 className="text-3xl font-bold text-white">{movie.title}</h2>
+                          <div className="bg-yellow-400 font-bold rounded-xl p-2">7.2</div>
                         </div>
                         <div>
-                          <div class="text-sm text-gray-400">{ new Date(ShowTime.time).toDateString()}</div>
-                          <div class="text-lg text-gray-400">{ShowTime.room.name}</div>
+                          <div className="text-sm text-gray-400">{ new Date(ShowTime.time).toDateString()}</div>
+                          <div className="text-lg text-gray-400">{ShowTime.room.name}</div>
                         </div>
-                        <div class="flex text-2xl font-bold text-gray-300">${ShowTime.price}</div>
+                        <div className="flex text-2xl font-bold text-gray-300">${ShowTime.price}</div>
                       </div>
                     </div>
 
