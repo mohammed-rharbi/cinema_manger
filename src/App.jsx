@@ -3,7 +3,7 @@ import Regester from './components/auth/regester'
 import './App.css'
 import { RouterProvider } from 'react-router-dom'
 import Toast from './components/UI/toast'
-import router from './router/index'
+import Router from './router/main'
 
 
 
@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-<RouterProvider router={router} />
+<RouterProvider router={Router} />
 <Toast/>
     </>
   ) 
