@@ -114,7 +114,7 @@ export default function Mange_movies() {
 
                 <Link to={`/add_video/${movie._id}`}>
                 <button className='bg-green-500 text-white px-3 py-1 mt-4 rounded-xl hover:scale-110 hover:bg-green-600 hover:box-shadow-2xl'>
-                <span class="material-symbols-outlined">video_camera_back_add</span>
+                <span className="material-symbols-outlined">video_camera_back_add</span>
                 </button>
                 </Link>        
                

@@ -50,10 +50,10 @@ export default function ShowTimeDetials() {
   return (
 
     <section className='w-full h-screen bg-gray-900 text-white flex justify-center items-center flex-col'>
-    <div class="container px-5 py-24 mx-auto">
-    <div class="lg:w-4/5 mx-auto flex flex-wrap">
+    <div className="container px-5 py-24 mx-auto">
+    <div className="lg:w-4/5 mx-auto flex flex-wrap">
 
-    <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+    <div className="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
 
         
         <div className='grid grid-cols-7 gap-4 mt-6 lg:mt-0 text-white text-center'>
@@ -65,7 +65,7 @@ export default function ShowTimeDetials() {
              key={seat.id} 
              onClick={() => handleSeat(seat)}
              className={`bg-yellow-500 py-2 px-2 rounded hover:bg-yellow-600 ${selectedSeat === seat ? 'bg-yellow-700' : ''} `}>
-            <img alt="seat" class=" object-cover object-center h-14 w-14  rounded border border-gray-200" 
+            <img alt="seat" className=" object-cover object-center h-14 w-14  rounded border border-gray-200" 
           src='/images/seat.png'/>
           <span className='text-gray-900 text-center font-bold'>1</span>
             </div>
@@ -76,26 +76,26 @@ export default function ShowTimeDetials() {
 
     </div>
     
-      <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+      <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
       
-        <h1 class="text-red-500 text-4xl title-font font-semibold mb-3">{showTime.movie.title}</h1>
-        <div class="flex mb-4">
+        <h1 className="text-red-500 text-4xl title-font font-semibold mb-3">{showTime.movie.title}</h1>
+        <div className="flex mb-4">
           <span className='text-gray-300 mt-4'><span className='text-red-500 font-bold'>Time :</span> { new Date(showTime.time).toDateString()}</span>
         </div>
-        <div class="flex mb-4">
+        <div className="flex mb-4">
           <span className='text-gray-300 mt-4'><span className='text-red-500 font-bold'>Movie Duration :</span> { new Date(showTime.movie.duration).toDateString()}</span>
         </div>
-        <div class="flex mb-4">
+        <div className="flex mb-4">
           <span className='text-gray-300 mt-2'><span className='text-red-500 font-bold'>ShowTime Room :</span>    {showTime.room.name}</span>
         </div>
-        <p class="leading-relaxed"></p>
-        <div class="flex mt-4 items-center pb-5 border-b-2 border-gray-200 mb-5">
+        <p className="leading-relaxed"></p>
+        <div className="flex mt-4 items-center pb-5 border-b-2 border-gray-200 mb-5">
         <span className='text-gray-300 mt-2'><span className='text-red-500 font-bold'>Room Type :</span>   {showTime.room.type}</span>
 
         
         </div>
-        <div class="flex">
-          <span class="title-font font-medium text-2xl text-gray-300">{showTime.price} $</span>
+        <div className="flex">
+          <span className="title-font font-medium text-2xl text-gray-300">{showTime.price} $</span>
           <BookButton showTimeId={showTime._id} seatId={selectedSeat} />
         </div>
       </div>

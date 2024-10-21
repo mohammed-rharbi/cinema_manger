@@ -50,15 +50,15 @@ export default function WatchMovie() {
   return (
     
 
-<section class="text-gray-700 body-font overflow-hidden bg-gray-900">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="lg:w-4/5 mx-auto flex flex-wrap">
+<section className="text-gray-700 body-font overflow-hidden bg-gray-900">
+  <div className="container px-5 py-24 mx-auto">
+    <div className="lg:w-4/5 mx-auto flex flex-wrap">
 
 
      
 
      <div className='w-full text-center mb-6'>
-      <h1 class="sm:text-4xl text-red-500  font-manrope mb-4">{movie.title}</h1>
+      <h1 className="sm:text-4xl text-red-500  font-manrope mb-4">{movie.title}</h1>
      </div>
 
     <div className='w-full flex justify-center'>
@@ -71,7 +71,7 @@ export default function WatchMovie() {
        width={800}
        height={400}
       />
-            {/* <video width="800"  class="w-200 h-200 object-cover object-center h-96  rounded border border-gray-200" controls>
+            {/* <video width="800"  className="w-200 h-200 object-cover object-center h-96  rounded border border-gray-200" controls>
             <source src={movie.video} type="video/mp4" />
             Your browser does not support the video tag.
             </video> */}
