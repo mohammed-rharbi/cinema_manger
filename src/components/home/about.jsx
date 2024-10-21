@@ -4,7 +4,7 @@ export default function About() {
   return (
 
 
-    <section className="py-24 bg-gray-900 text-white relative xl:mr-0 lg:mr-5 mr-0">
+    <section className="py-24 bg-gray-900 text-white xl:mr-0 lg:mr-5 mr-0">
         <div className="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
             <div className="w-full justify-start items-center xl:gap-12 gap-10 grid lg:grid-cols-2 grid-cols-1">
                 <div className="w-full flex-col justify-center lg:items-start items-center gap-10 inline-flex">
@@ -64,9 +64,9 @@ export default function About() {
                         </svg>
                     </button>
                 </div>
-                <div className="w-full lg:justify-start justify-center items-start flex">
+                <div className="w-full lg:justify-start justify-center items-start">
                     <div
-                        className="sm:w-[564px] w-full sm:h-[646px] h-full sm:bg-red-500 rounded-3xl sm:border border-gray-200 relative">
+                        className="sm:w-[564px] w-full sm:h-[646px] h-full sm:bg-red-500 rounded-3xl sm:border border-gray-200">
                         <img className="sm:mt-5 sm:ml-5 w-full h-full rounded-3xl object-cover"
                             src="./public/images/us.webp" alt="about Us image" />
                     </div>

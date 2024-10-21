@@ -41,6 +41,8 @@
 #navbar{
 
   background-color: rgb(255, 30, 86);
+  position: sticky;
+  top: 0; 
 }
 
 

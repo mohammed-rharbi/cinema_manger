@@ -1,10 +1,10 @@
 import React from 'react'
 import Input from '../UI/input'
 import Button from '../UI/button'
-import { Link } from 'react-router-dom'
+import { Link , useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { toast } from 'react-toastify'
-import axios from 'axios'
+import AxiosInstance from '../../services/axios'
 
 
 
@@ -13,7 +13,7 @@ const loginUser = async (userData) => {
   try {
 
       console.log(userData);
-      const response = await axios.post('http://localhost:5000/api/auth/login', userData);
+      const response = await AxiosInstance.post('/auth/login', userData);
 
       const data =  response.data;
 
@@ -26,22 +26,11 @@ const loginUser = async (userData) => {
         localStorage.setItem('userId', userId);
         localStorage.setItem('userRole', userRole);
 
-        if(userRole === 'admin') {
-
-          window.location.href = '/dashboard';
-
-        }else if(userRole === 'customer') {
-
-          window.location.href = '/home';
-        }else{
-
-          window.location.href = '/';
-        }
+        return userRole ;
 
       }else{
         toast.error("login failed");
       }
-
 
   } catch (err) {
 
@@ -64,17 +53,32 @@ export default function Login() {
 
   const [UserEmail, UpdateEmail] = useState("");
   const [UserPassword, UpdatePassword] = useState("");
+
+  const navigate = useNavigate()
   
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
     if(validate()){
 
-      loginUser({email : UserEmail,password : UserPassword})
-      .then(() => toast.success("Login Successful"))
-      .catch((err) => toast.error(err.message))
+      try{
 
+        const userRole = await loginUser({email : UserEmail,password : UserPassword});
+        toast.success("Login Successful");
+
+        if(userRole === 'admin'){
+          navigate('/dashboard');
+        }else if(userRole === 'customer'){
+          navigate('/home');
+        }else{
+          navigate('/login');
+        }
+
+      }catch(err){
+
+        toast.error('login failde');
+      }
     }
   };
 

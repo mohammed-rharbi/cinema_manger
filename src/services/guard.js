@@ -1,12 +1,18 @@
-import { Navigate  } from "react-router-dom";
-import useAuth from "../hooks/checkAuth";
+import { useNavigate } from 'react-router-dom';
+import useAuth from '../hooks/checkAuth';  
+
+const GuardRoute = ({ children }) => {
+  const isAuth = useAuth(); 
+  const navigate = useNavigate(); 
 
 
-const GurdRoute = ({children}) =>{
 
-    const isAuth = useAuth();
+  if (!isAuth) {
+    navigate('/login')
+  }
 
-    return isAuth ? children : window.location.href = '/login'
-}
 
-export default GurdRoute;
+  return children;
+};
+
+export default GuardRoute;

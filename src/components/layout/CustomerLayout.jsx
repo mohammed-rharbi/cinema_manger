@@ -10,7 +10,7 @@ export default function CusLayout() {
     <>
 
 <NavBar/>
-<main>
+<main >
 <Outlet/>
 </main>
 <Fotter/>

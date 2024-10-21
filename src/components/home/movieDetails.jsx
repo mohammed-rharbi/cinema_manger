@@ -10,6 +10,7 @@ import Rating from '../admin/movie/rating'
 import Rate from '../admin/movie/rate'
 import Comments from './user/comments'
 import AddComment from './user/addComment'
+import RelatedMovies from './relatedMovies'
 
 
 export default function MovieDetails() {
@@ -60,6 +61,7 @@ export default function MovieDetails() {
   <div className="container px-5 py-24 mx-auto">
     <div className="lg:w-4/5 mx-auto flex flex-wrap">
 
+<RelatedMovies movieId={movie._id}/>
 
       <div>
 
@@ -92,7 +94,7 @@ export default function MovieDetails() {
         </div>
 
         
-        <Rate movieId={movie._id}/>
+        {/* <Rate movieId={movie._id}/> */}
 
         <div className="flex justify-center gap-32">
 
