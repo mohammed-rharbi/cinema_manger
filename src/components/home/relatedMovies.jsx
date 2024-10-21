@@ -6,22 +6,24 @@ import { useState , useEffect } from 'react'
 
 
 
-export default function RelatedMovies() {
+export default function RelatedMovies({movieId}) {
 
-    const [relateds , setRelateds] = useState(null);
+    const [relateds , setRelateds] = useState([]);
 
 
 
     useEffect(()=>{
 
-        const getRelateds = async (id)=>{
+        console.log(movieId)
+        const getRelateds = async ()=>{
 
             try{
         
-                const res = await AxiosInstance.get(`/movie/getRealtedMovies/${id}`);
+                const res = await AxiosInstance.get(`/movie/getRealtedMovies/${movieId}`);
                 
-                console.log(res.data.movies);
-                setRelateds(res.data.movies);
+                console.log(res.data.realted)
+
+                setRelateds(res.data.realted);
         
             }catch(err){
                 console.log(err)
@@ -30,29 +32,33 @@ export default function RelatedMovies() {
         }
         
         getRelateds()
-    },[])
+    },[movieId])
 
 
 
+    if(!relateds){
+        return <p>no relateds for this moveie</p>
+    }
 
   return (
 
 
 
 
-    <div>
+    <div className=''>
         
     {
-
         relateds.map((movie)=> (
 
-
-        <div key={movie._id}>
-            <img
-             src={movie.img}
-             alt={movie.title} 
-             className='w-24 h-24' />
+        <div className='mt-4'>
+            <div key={movie._id}>
+                        <img
+                        src={movie.image}
+                        alt={movie.title} 
+                        className='w-32 h-52' />
+            </div>
         </div>
+      
 
 
         ))

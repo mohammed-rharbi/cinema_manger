@@ -25,8 +25,6 @@ export default function Favorites() {
                 const res = await AxiosInstance.get(`/favorite/myFavorites?userId=${userId}`);
 
 
-                // console.log(res.data.favorites[0].movies)
-
             
                 setMovies(res.data.favorites[0].movies);
                 
