@@ -125,8 +125,8 @@ export default function MovieDetails() {
 
           ShowTimes.map((ShowTime) => (
 
-                <div className="flex justify-center items-center flex-row space-y-12 py-12 w-full h-auto mb-24  mx-auto">
-                <div key={ShowTime._id}  className="py-3 sm:max-w-xl sm:mx-auto">
+                <div key={ShowTime._id} className="flex justify-center items-center flex-row space-y-12 py-12 w-full h-auto mb-24  mx-auto">
+                <div className="py-3 sm:max-w-xl sm:mx-auto">
                     <div className="bg-gray-800 shadow-lg border-gray-100 max-h-80	 border sm:rounded-3xl p-8 flex space-x-8">
                       <div className="h-48 overflow-visible w-1/2">
                           <img className="rounded-3xl shadow-lg" src={movie.image}/>

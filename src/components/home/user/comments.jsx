@@ -22,8 +22,6 @@ export default function Comments({movieId}) {
         
                 if(res.status === 200){
         
-                    // console.log('comments are here',res.data.comments[0]);
-
                     setComments(res.data.comments);
                 }
         
@@ -52,7 +50,7 @@ export default function Comments({movieId}) {
         {
             comments?.map((comment)=> (
 
-                <div className="max-w-lg mx-auto border px-6 py-4 rounded-lg mb-6">
+                <div key={comment._id} className="max-w-lg mx-auto border px-6 py-4 rounded-lg mb-6">
                 <div className="flex items-center mb-6 ">
                     <img src="https://randomuser.me/api/portraits/men/97.jpg" alt="Avatar" className="w-12 h-12 rounded-full mr-4"/>
                     <div>

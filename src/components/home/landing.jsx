@@ -10,7 +10,7 @@ export default function Landing() {
 
 <div className="flex  justify-center flex-col text-center ">
     <div>
-    <h1 id='text' class="text-5xl mt-24 md:text-7xl font-bold text-white tracking-wide leading-snug font-playfair">
+    <h1 id='text' className="text-5xl mt-24 md:text-7xl font-bold text-white tracking-wide leading-snug font-playfair">
     Where Every Seat Tells a Story
   </h1>
     </div>
