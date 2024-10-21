@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Favorites from './favorites'
 
 export default function Profile() {
-  return (
 
+    const [profileImage , setProfileImage ] = useState(null);
+    const [name , setName] = useState('');
+    
+    const userId = localStorage.getItem('userId');
+
+
+  return (
 
 <section className="py-14 my-auto dark:bg-gray-900">
     <div className="lg:w-[80%] md:w-[90%] xs:w-[96%] mx-auto flex gap-4 ">

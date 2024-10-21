@@ -10,11 +10,11 @@ export default function Rate({movieId}) {
 
     useEffect(() => {
         const getRate = async (id) => {
+            
           try {
-            const res = await AxiosInstance.post(`/rating/getMovieRate/${id}`);
-            
+            const res = await AxiosInstance.get(`/rating/getMovieRate/${id}`);
 
-            
+           
             if (res.status === 200) {
 
                 if (res.data && typeof res.data.avgRate === 'number') {
