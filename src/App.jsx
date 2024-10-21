@@ -1,5 +1,3 @@
-import { useState } from 'react'
-import Regester from './components/auth/regester'
 import './App.css'
 import { RouterProvider } from 'react-router-dom'
 import Toast from './components/UI/toast'

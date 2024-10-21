@@ -9,6 +9,7 @@ const Protection = ({children , allowedRole}) => {
 
         toast.error('you are not authorized');
         return  window.location.href = '/login';
+        
     }
 
     return children;

@@ -6,7 +6,7 @@ import AuthRouter from "./guestRouter";
 import Layout from "../components/layout/AdminLayout";
 import CusLayout from "../components/layout/CustomerLayout";
 import AuthLayout from "../components/layout/AuthLayout";
-import GurdRoute from "../services/guard";
+import GuardRoute from "../services/guard";
 
 
 
@@ -16,12 +16,12 @@ const Router = createBrowserRouter([
 
 
     {
-        element: (<GurdRoute>  <Layout/>  </GurdRoute>),
+        element: <Layout/>,
         children: AdminRouter
     },
 
     {
-        element: (<GurdRoute>   <CusLayout/>  </GurdRoute>),
+        element: <CusLayout/>,
         children: CustomerRouter
     },
 
