@@ -6,6 +6,7 @@ import AuthRouter from "./guestRouter";
 import Layout from "../components/layout/AdminLayout";
 import CusLayout from "../components/layout/CustomerLayout";
 import AuthLayout from "../components/layout/AuthLayout";
+import GurdRoute from "../services/guard";
 
 
 
@@ -15,12 +16,12 @@ const Router = createBrowserRouter([
 
 
     {
-        element: <Layout/>,
+        element: (<GurdRoute>  <Layout/>  </GurdRoute>),
         children: AdminRouter
     },
 
     {
-        element: <CusLayout/>,
+        element: (<GurdRoute>   <CusLayout/>  </GurdRoute>),
         children: CustomerRouter
     },
 
@@ -29,9 +30,6 @@ const Router = createBrowserRouter([
         children: AuthRouter
     }
 
-
-  
-        
 
 ])
 
