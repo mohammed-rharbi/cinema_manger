@@ -83,7 +83,7 @@ export default function MovieDetails() {
         </div>
 
         <div className="flex mb-4">
-          <span className='text-gray-300 mt-2'>Gen : {movie.gen} Min</span>
+          <span className='text-gray-300 mt-2'>Gen : {movie.gen}</span>
         </div>
 
         <p className="leading-relaxed"></p>
@@ -94,7 +94,6 @@ export default function MovieDetails() {
         </div>
 
         
-        {/* <Rate movieId={movie._id}/> */}
 
         <div className="flex justify-center gap-32">
 
