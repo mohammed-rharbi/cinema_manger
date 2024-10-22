@@ -4,9 +4,7 @@
 export const genders = [ 
     
     { key:'action', value:'Action'},
-    { key:'drama', value:'Drama'},
-    { key :"action", value :"Action"},
-    { key :"drama", value :"Drama"},
+    { key :"drama", value :'Drama'},
     { key :"comedy", value :"Comedy"},
     { key :"thriller", value :"Thriller"},
     { key :"horror", value :"Horror"},
