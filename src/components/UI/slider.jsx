@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function     Slider({ items }) {
+export default function Slider({ items }) {
   return (
-    <div className="flex space-x-4 overflow-x-auto scrollbar-hide">
+    <div className="flex space-x-4 overflow-x-auto  overflow-y-hide  scrollbar-hide">
       {items.map((movie) => (
         <div key={movie._id} className="relative p-3 w-64 h-full flex-shrink-0 hover:scale-105 transition-transform duration-300">
           <img 

@@ -66,8 +66,8 @@ export default function ShowTimeDetials() {
              onClick={() => handleSeat(seat)}
              className={`bg-yellow-500 py-2 px-2 rounded hover:bg-yellow-600 ${selectedSeat === seat ? 'bg-yellow-700' : ''} `}>
             <img alt="seat" className=" object-cover object-center h-14 w-14  rounded border border-gray-200" 
-          src='/images/seat.png'/>
-          <span className='text-gray-900 text-center font-bold'>1</span>
+          src='/images/seat.webp'/>
+          <span className='text-gray-900 text-center font-bold'>{seat.index}</span>
             </div>
         )
         

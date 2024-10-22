@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import AxiosInstance from '../../services/axios';
+import SearchBar from '../admin/movie/search';
 
 export default function AllMovies() {
-
   const [movies, setMovies] = useState([]);
+  const [filteredMovies, setFilteredMovies] = useState([]);
 
   useEffect(() => {
     const getMovies = async () => {
       try {
         const response = await AxiosInstance.get('movie/allMovies');
         setMovies(response.data.movies);
-      } catch (error) { 
+        setFilteredMovies(response.data.movies);
+      } catch (error) {
         console.log(error);
       }
     };
@@ -19,22 +21,36 @@ export default function AllMovies() {
     getMovies();
   }, []);
 
-  if (!movies) {
+  const handleSearch = (query, gen) => {
+    const filtered = movies.filter((movie) =>
+      movie.title.toLowerCase().includes(query.toLowerCase()) && 
+      (gen === 'all' || movie.gen.toLowerCase() === gen.toLowerCase())
+    );
+
+    setFilteredMovies(filtered);
+  };
+
+  if (!movies.length) {
     return <p>No movies available</p>;
   }
 
   return (
     <section className="w-full min-h-screen bg-gray-900 py-10 px-12">
       <div className="container mx-auto">
+
+        <div className="w-full mb-12 mt-8">
+
+          <SearchBar handleSearch={handleSearch} /> 
+        </div>
+
         <h2 className="text-3xl font-bold text-white text-center mb-8">Available Movies</h2>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-          {movies.length === 0 ? (
+          {filteredMovies.length === 0 ? (
             <p className="text-white text-center col-span-full">No movies found</p>
           ) : (
-            movies.map((movie) => (
+            filteredMovies.map((movie) => (
               <div key={movie._id} className="relative group bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-shadow duration-300">
-
                 <img 
                   src={movie.image} 
                   alt={movie.title} 
@@ -52,7 +68,7 @@ export default function AllMovies() {
                     </button>
                   </Link>
                 </div>
-                <div className='w-40 h-20'></div>
+                <div className="w-40 h-20"></div>
               </div>
             ))
           )}
