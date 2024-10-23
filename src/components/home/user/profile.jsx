@@ -1,12 +1,39 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Favorites from './favorites'
+import AxiosInstance from '../../../services/axios';
 
 export default function Profile() {
 
+    const [user , setUser] = useState(null);
     const [profileImage , setProfileImage ] = useState(null);
     const [name , setName] = useState('');
+    const [email , setEmail] = useState('');
+    const [birthDay , setBirthDay] = useState('');
     
     const userId = localStorage.getItem('userId');
+
+    useEffect(()=>{
+
+        const getUserInfo = async ()=>{
+
+
+            try{
+
+
+                const res = await AxiosInstance.get(`user/getUserById/${userId}`);
+
+                console.log(res);
+                setUser(res.data)
+
+            }catch(err){
+
+                console.log(err)
+            }
+
+        }
+
+        getUserInfo()
+    } , [])
 
 
   return (
