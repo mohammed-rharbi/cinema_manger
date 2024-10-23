@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Favorites from './favorites'
 import AxiosInstance from '../../../services/axios';
+import { toast } from 'react-toastify';
 
 export default function Profile() {
 
@@ -23,7 +24,6 @@ export default function Profile() {
 
                 const res = await AxiosInstance.get(`/auth/getUserById/${userId}`);
 
-                console.log(res.data.updatUser);
                 setUser(res.data.updatUser)
                 setName(res.data.updatUser.name)
                 setEmail(res.data.updatUser.email)
@@ -41,6 +41,31 @@ export default function Profile() {
     } , [userId])
 
 
+    const handleSubmit = async (e)=>{
+
+
+        e.preventDefault();
+
+        const updatedUser = {name , email , birthDay};
+
+
+        try{
+
+
+            const resp = await AxiosInstance.put(`/auth/updateProfile/${userId}`, updatedUser);
+
+            if(resp.status === 200){
+                toast.success('profile updated Successfully')
+            }
+
+        }catch(err){
+
+            console.log(err)
+        }
+
+
+    }
+
   return (
 
 <section className="py-14 my-auto dark:bg-gray-900">
@@ -54,7 +79,7 @@ export default function Profile() {
                     Profile
                 </h1>
                 <h2 className="text-grey text-sm mb-4 dark:text-gray-400">Create Profile</h2>
-                <form>
+                <form onSubmit={handleSubmit}>
 
                     <div
                         className="w-full rounded-sm bg-[url('https://images.unsplash.com/photo-1449844908441-8829872d2607?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw2fHxob21lfGVufDB8MHx8fDE3MTA0MDE1NDZ8MA&ixlib=rb-4.0.3&q=80&w=1080')] bg-cover bg-center bg-no-repeat items-center">
@@ -64,7 +89,7 @@ export default function Profile() {
 
                             <div className="bg-white/90 rounded-full w-6 h-6 text-center ml-28 mt-4">
 
-                                <input type="file" name="profile" id="upload_profile" hidden required/>
+                                <input type="file" name="profile" id="upload_profile" hidden />
 
                                 <label htmlFor="upload_profile">
                                         <svg data-slot="icon" className="w-6 h-5 text-blue-700" fill="none"
@@ -82,7 +107,7 @@ export default function Profile() {
                         </div>
                         <div className="flex justify-end">
 
-                            <input type="file" name="profile" id="upload_cover" hidden required/>
+                            <input type="file" name="profile" id="upload_cover" hidden />
 
                             <div
                                 className="bg-white flex items-center gap-1 rounded-tl-md px-2 text-center font-semibold">
@@ -132,13 +157,10 @@ export default function Profile() {
                     <div className="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col gap-2 justify-center w-full">
                         <div className="w-full  mb-4 mt-6">
                             <label htmlFor="" className="mb-2 dark:text-gray-300">Birth Day</label>
-                            <input type="date"
+                            <input type="text"
                                     className="mt-2 p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800"
-                                    placeholder="First Name"
                                     value={birthDay}
                                     onChange={(e)=> setBirthDay(e.target.value)}
-
-                                    
                                     />
                         </div>
                         <div className="w-full  mb-4 lg:mt-6">
