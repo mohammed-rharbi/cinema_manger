@@ -59,7 +59,7 @@ export default function Mange_movies() {
 
 <>
 
-<CreateMovie toggle={hide} />
+<CreateMovie toggle={hide} hideIt={() => setHide(false)}/>
 
 
 

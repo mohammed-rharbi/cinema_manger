@@ -9,6 +9,7 @@ export default function Profile() {
     const [name , setName] = useState('');
     const [email , setEmail] = useState('');
     const [birthDay , setBirthDay] = useState('');
+    const [accountType , setAccountType] = useState('')
     
     const userId = localStorage.getItem('userId');
 
@@ -20,10 +21,14 @@ export default function Profile() {
             try{
 
 
-                const res = await AxiosInstance.get(`user/getUserById/${userId}`);
+                const res = await AxiosInstance.get(`/auth/getUserById/${userId}`);
 
-                console.log(res);
-                setUser(res.data)
+                console.log(res.data.updatUser);
+                setUser(res.data.updatUser)
+                setName(res.data.updatUser.name)
+                setEmail(res.data.updatUser.email)
+                setBirthDay(res.data.updatUser.birthDay)
+                setAccountType(res.data.updatUser.accountType)
 
             }catch(err){
 
@@ -33,7 +38,7 @@ export default function Profile() {
         }
 
         getUserInfo()
-    } , [])
+    } , [userId])
 
 
   return (
@@ -62,9 +67,9 @@ export default function Profile() {
                                 <input type="file" name="profile" id="upload_profile" hidden required/>
 
                                 <label htmlFor="upload_profile">
-                                        <svg dataSlot="icon" className="w-6 h-5 text-blue-700" fill="none"
+                                        <svg data-slot="icon" className="w-6 h-5 text-blue-700" fill="none"
                                             strokeWidth="1.5" stroke="currentColor" viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg" ariaHidden="true">
+                                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                             <path strokeLinecap="round" strokeLinejoin="round"
                                                 d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z">
                                             </path>
@@ -81,7 +86,7 @@ export default function Profile() {
 
                             <div
                                 className="bg-white flex items-center gap-1 rounded-tl-md px-2 text-center font-semibold">
-                                <label for="upload_cover" className="inline-flex items-center gap-1 cursor-pointer">Cover
+                                <label htmlFor="upload_cover" className="inline-flex items-center gap-1 cursor-pointer">Cover
                                     
                                 <svg data-slot="icon" className="w-6 h-5 text-blue-700" fill="none" strokeWidth="1.5"
                                     stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
@@ -103,36 +108,48 @@ export default function Profile() {
 
                     <div className="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col gap-2 justify-center w-full">
                         <div className="w-full  mb-4 mt-6">
-                            <label htmlFor="" className="mb-2 dark:text-gray-300">Name</label>
+                            <label htmlFor=""  className="mb-2 dark:text-gray-300">Name</label>
                             <input type="text"
                                     className="mt-2 p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800"
-                                    placeholder="First Name"/>
+                                    placeholder="First Name"
+                                    value={name}
+                                    onChange={(e)=> setName(e.target.value)}
+                                    
+                                    />
                         </div>
                         <div className="w-full  mb-4 lg:mt-6">
                             <label htmlFor="" className=" dark:text-gray-300">Email</label>
                             <input type="email"
                                     className="mt-2 p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800"
-                                    placeholder="Last Name"
+                                    placeholder="Email"
+                                    value={email}
+                                    onChange={(e)=> setEmail(e.target.value)}
+
                                     />
                         </div>
                     </div>
 
                     <div className="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col gap-2 justify-center w-full">
-                    <div className="w-full  mb-4 lg:mt-6">
-                            <label htmlFor="" className=" dark:text-gray-300">Email</label>
-                            <input type="email"
+                        <div className="w-full  mb-4 mt-6">
+                            <label htmlFor="" className="mb-2 dark:text-gray-300">Birth Day</label>
+                            <input type="date"
                                     className="mt-2 p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800"
-                                    placeholder="Last Name"
-                                    />
-                    </div>
+                                    placeholder="First Name"
+                                    value={birthDay}
+                                    onChange={(e)=> setBirthDay(e.target.value)}
 
-                    <div className="w-full  mb-4 lg:mt-6">
-                            <label htmlFor="" className=" dark:text-gray-300">Email</label>
-                            <input type="email"
-                                    className="mt-2 p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800"
-                                    placeholder="Last Name"
+                                    
                                     />
-                    </div>
+                        </div>
+                        <div className="w-full  mb-4 lg:mt-6">
+                            <label htmlFor="" className=" dark:text-gray-300">Acount Type</label>
+                            <input type="text"
+                                    className="mt-2 p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800"
+                                    value={accountType}
+
+                                    readOnly
+                                    />
+                        </div>
                     </div>
 
                     <div className="w-100 rounded-lg bg-blue-500 mt-4 text-white text-lg font-semibold">
