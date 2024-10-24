@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import AxiosInstance from '../../services/axios';
-import Loading from '../UI/loading';
+import AxiosInstance from '../../../services/axios';
+import Loading from '../../UI/loading';
 
 export default function ManageShowTimes() {
   const [showTimes, setShowTimes] = useState([]);

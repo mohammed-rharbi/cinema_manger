@@ -1,10 +1,10 @@
 import React from 'react'
-import AxiosInstance from '../../services/axios'
+import AxiosInstance from '../../../services/axios'
 import { useState , useEffect } from 'react'
-import Loading from '../UI/loading';
+import Loading from '../../UI/loading';
 import { Link } from 'react-router-dom';
-import CreateMovie from './movie/createMovie'
-import DeleteMovie from './movie/deleteMovie';
+import CreateMovie from './createMovie'
+import DeleteMovie from './deleteMovie';
 
 
 export default function Mange_movies() {
