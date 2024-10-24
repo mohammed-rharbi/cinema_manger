@@ -9,6 +9,7 @@ import MovieDetails from "../components/home/movieDetails";
 import ShowTimeDetials from "../components/home/showTimeDetials";
 import WatchMovie from "../components/home/watchMovie";
 import Profile from "../components/home/user/profile";
+import PopUp from '../components/UI/PopUp';
 
 
 
@@ -66,6 +67,8 @@ const CustomerRouter = [
         path: "/user_profile",
         element: <Profile/>
     }
+  
+
 
 
 ]
