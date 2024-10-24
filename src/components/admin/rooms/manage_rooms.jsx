@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AxiosInstance from '../../../services/axios';
 import Loading from '../../UI/loading';
+import CreateRoom from './createRooms';
 
 
 export default function Manage_rooms() {
@@ -30,7 +31,7 @@ export default function Manage_rooms() {
 
   if (loading) return <Loading />;
 
-  if (!showTimes.length) return <div className="text-white text-center p-4">No rooms available</div>;
+  if (!rooms.length) return <div className="text-white text-center p-4">No rooms available</div>;
 
 
 
