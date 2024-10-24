@@ -2,10 +2,15 @@ import React, { useState, useEffect } from 'react';
 import AxiosInstance from '../../../services/axios';
 import Loading from '../../UI/loading';
 import DeleteShowTime from './deleteShowTime';
+import CreateShowTime from './createShowTime';
 
 export default function ManageShowTimes() {
   const [showTimes, setShowTimes] = useState([]);
   const [loading, setLoading] = useState(true);
+
+
+  const [showCreate, setShowCreate] = useState(false);
+
 
   useEffect(() => {
     const fetchShowTimes = async () => {
@@ -26,11 +31,23 @@ export default function ManageShowTimes() {
 
   if (!showTimes.length) return <div className="text-white text-center p-4">No showtimes available</div>;
 
-  return (
-    <div className="min-h-screen bg-gray-900 py-10 px-5">
 
+
+  const hideIt = () => {
+    setShowCreate(false);
+};
+
+  return (
+
+    <>
+
+
+{showCreate && <CreateShowTime hideIt={hideIt} />}
+
+
+<div className="min-h-screen bg-gray-900 py-10 px-5">
 <div className="flex justify-center gap-8 mt-8">
-        <div className="bg-blue-700 h-24 w-80 rounded-3xl text-center hover:scale-105 text-white hover:bg-blue-800"></div>
+        <div onClick={()=> setShowCreate(true)} className="bg-blue-700 h-24 w-80 rounded-3xl text-center hover:scale-105 text-white hover:bg-blue-800"> add showTime </div>
         <div className="bg-blue-700 h-24 w-80 rounded-3xl text-center hover:scale-105 text-white hover:bg-blue-800"></div>
         <div className="bg-blue-700 h-24 w-80 rounded-3xl text-center hover:scale-105 text-white hover:bg-blue-800"></div>
       </div>
@@ -65,5 +82,7 @@ export default function ManageShowTimes() {
         ))}
       </div>
     </div>
+
+    </>
   );
 }
