@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Slider from '../UI/slider';  
 import AxiosInstance from '../../services/axios';
 import SearchBar from '../admin/movie/search';
+import BrowseButton from '../UI/browseButton';
 
 export default function Home() {
   const [latestMovies, setLatestMovies] = useState([]);
@@ -37,11 +38,9 @@ export default function Home() {
           <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
             Explore the best movies in theaters and on streaming platforms now.
           </p>
-          <Link to="/allMovies">
-            <button className="text-xl bg-blue-500 hover:bg-blue-600 py-3 px-8 rounded-lg">
-              Browse Movies
-            </button>
-          </Link>
+         <div className='w-full flex justify-center'>
+         <BrowseButton/> 
+         </div>
         </div>
       </div>
 
