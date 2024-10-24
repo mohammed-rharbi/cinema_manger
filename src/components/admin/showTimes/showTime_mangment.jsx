@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AxiosInstance from '../../../services/axios';
 import Loading from '../../UI/loading';
+import DeleteShowTime from './deleteShowTime';
 
 export default function ManageShowTimes() {
   const [showTimes, setShowTimes] = useState([]);
@@ -57,9 +58,7 @@ export default function ManageShowTimes() {
                 <button className="bg-blue-500 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded transition">
                   Edit
                 </button>
-                <button className="bg-blue-500 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded transition">
-                  delete
-                </button>
+                <DeleteShowTime id={showTime._id}/>
               </div>
             </div>
           </div>

@@ -11,7 +11,7 @@ const deleteShowTime = async (id) => {
 
     try{
   
-        const res = await AxiosInstance.delete(`/shotime/deleteShowtime/${id}`);
+        const res = await AxiosInstance.delete(`/showTime/deleteShowtime/${id}`);
         if(res.status === 200){
   
           toast.success('showTime was deleted successfully')
@@ -50,7 +50,7 @@ const handleDelete = async ()=>{
       const secc = await deleteShowTime(id);
       if(secc){
         Swal.fire('Deleted!', '', 'success');
-        navigate('/Manage_showTimes')
+        navigate('/Manage_showes')
       }
     }
   
