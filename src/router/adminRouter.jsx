@@ -1,6 +1,6 @@
 import React from 'react'
 import Dashboard from "../components/admin/dashboard";
-import Manage_rooms from "../components/admin/manage_rooms";
+import Manage_rooms from "../components/admin/rooms/manage_rooms";
 import Manage_movies from "../components/admin/movie/manage_movies";
 import Manage_users from "../components/admin/customers";
 import Manage_showTimes from "../components/admin/showTimes/showTime_mangment";
