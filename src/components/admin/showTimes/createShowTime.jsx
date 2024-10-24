@@ -12,11 +12,7 @@ const createShowTime = async (data) => {
 
         if(res.status === 201){
             return toast.success('ShowTime created successfully')
-
-        }else{
-            throw new Error('there is an error')
         }
-        
 
     }catch(err){
         console.log(err)
@@ -88,9 +84,9 @@ export default function CreateShowTime({hideIt}) {
     
         if (validate()) {
             try {
-                await createShowTime({ movie : movie , time : time , movie : movie , room : room });
+                await createShowTime({ movie : movie , time : time , price : price , room : room });
                 toast.success("ShowTime Created Successfully");
-                hide();
+                hideIt
             } catch (err) {
                 toast.error("There was an error while creating the ShowTime.");
             }
@@ -141,7 +137,7 @@ export default function CreateShowTime({hideIt}) {
                     </h3>
                     <button onClick={ hideIt  } type="button" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="crud-modal">
                         <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                            <path stroke="currentColor" stroke-linecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                         </svg>
                         <span className="sr-only">Close modal</span>
                     </button>
@@ -179,15 +175,15 @@ export default function CreateShowTime({hideIt}) {
                         </div>
 
 
-                        <div className="col-span-2">
+                        <div className="col-span-2 sm:col-span-1">
                             <label htmlFor="time" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Time</label>
-                            <input type="text" name="time" id="time" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Movie Name" required="" value={time} onChange={(e) => setTime(e.target.value)}/>
+                            <input type="datetime-local" name="time" id="time" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Mo" required="" value={time} onChange={(e) => setTime(e.target.value)}/>
                         </div>
 
 
                         <div className="col-span-2 sm:col-span-1">
                             <label htmlFor="price" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
-                            <input type="text" name="price" id="price" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value={price} onChange={(e) => setPrice(e.target.value)} required=""/>
+                            <input type="text" name="price" id="price" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value={price} onChange={(e) => setPrice(e.target.value)} placeholder='$$$' required=""/>
                         </div>
 
                        
