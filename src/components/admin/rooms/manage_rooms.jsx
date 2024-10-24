@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import AxiosInstance from '../../../services/axios';
 import Loading from '../../UI/loading';
 import CreateRoom from './createRooms';
+import DeleteRoom from './deleteRoom';
 
 
 export default function Manage_rooms() {
@@ -31,8 +32,6 @@ export default function Manage_rooms() {
 
   if (loading) return <Loading />;
 
-  if (!rooms.length) return <div className="text-white text-center p-4">No rooms available</div>;
-
 
 
   const hideIt = () => {
@@ -49,7 +48,7 @@ export default function Manage_rooms() {
 
 <div className="min-h-screen bg-gray-900 py-10 px-5">
 <div className="flex justify-center gap-8 mt-8">
-        <div onClick={()=> setShowCreate(true)} className="bg-blue-700 h-24 w-80 rounded-3xl text-center hover:scale-105 text-white hover:bg-blue-800"> add showTime </div>
+        <div onClick={()=> setShowCreate(true)} className="bg-blue-700 h-24 w-80 rounded-3xl text-center hover:scale-105 text-white hover:bg-blue-800"> add show Room </div>
         <div className="bg-blue-700 h-24 w-80 rounded-3xl text-center hover:scale-105 text-white hover:bg-blue-800"></div>
         <div className="bg-blue-700 h-24 w-80 rounded-3xl text-center hover:scale-105 text-white hover:bg-blue-800"></div>
       </div>
@@ -75,6 +74,7 @@ export default function Manage_rooms() {
                   Edit
                 </button>
               </div>
+              <DeleteRoom id={room._id}/>
             </div>
           </div>
         ))}

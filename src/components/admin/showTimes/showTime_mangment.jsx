@@ -29,7 +29,6 @@ export default function ManageShowTimes() {
 
   if (loading) return <Loading />;
 
-  if (!showTimes.length) return <div className="text-white text-center p-4">No showtimes available</div>;
 
 
 
