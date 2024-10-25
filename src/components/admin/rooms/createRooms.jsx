@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 const createNewRoom = async (data) => {
 
+
     try{
 
         const res = await AxiosInstance.post('/room/createRoom' , data ,{
@@ -18,12 +19,7 @@ const createNewRoom = async (data) => {
         });
 
         if(res.status === 201){
-            navigate('/Manage_rooms');
             return toast.success('ShowTime created successfully');
-        }
-        if(res.status === 400){
-
-            toast.error('Cannot delete this room because it has associated showtimes');
         }
 
     }catch(err){
@@ -41,8 +37,6 @@ export default function CreateRoom({hideIt}) {
     const [description , setDescription] = useState('')
     const [image , setImage] = useState(null)
    
-    const navigate = useNavigate()
-
     
     const handleCreate = async (e) => {
 
