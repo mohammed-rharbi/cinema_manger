@@ -62,6 +62,7 @@ export default function CreateShowTime({hideIt}) {
                 const res = await AxiosInstance.get('/room/getRooms');
 
                 setRooms(res.data.rooms);
+                console.log("aloooo",res.data)
     
 
             }catch(err){
@@ -154,7 +155,7 @@ export default function CreateShowTime({hideIt}) {
                                 {
                                     rooms.map((room)=> 
                                         
-                                        (   <option value={room._id}>{room.name}</option> )
+                                        (   <option value={room._id} >{room.name}</option> )
                                     )
                                 }
                             </select>
