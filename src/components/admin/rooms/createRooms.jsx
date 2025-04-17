@@ -92,7 +92,7 @@ export default function CreateRoom({hideIt}) {
 <div aria-hidden="true" className='fixed top-0 left-0 z-30 flex justify-center items-center w-full h-full max-h-full-1'>
  <div onClick={hideIt} className='absolute top-0 left-0 bg-black bg-opacity-60  h-full w-full z-40' ></div> 
 
-        <div className="relative  flex p-4 z-50 p-4  max-w-md max-h-full">
+        <div className="relative  flex p-4 z-50 max-w-md max-h-full">
 
             <div  className="w-full bg-white rounded-lg shadow dark:bg-gray-700">
 

@@ -57,13 +57,11 @@ const hidtUpdate =()=>{
 {showUpdate && <UpdateRoom roomId={selectedRoom} hideEdit={hidtUpdate} />}
 
 
-
-
 <div className="min-h-screen bg-gray-900 py-10 px-5">
 <div className="flex justify-center gap-8 mt-8">
         <div onClick={()=> setShowCreate(true)} className="bg-blue-700 h-24 w-80 rounded-3xl text-center hover:scale-105 text-white hover:bg-blue-800"> add show Room </div>
         <div className="bg-blue-700 h-24 w-80 rounded-3xl text-center hover:scale-105 text-white hover:bg-blue-800"></div>
-        <div className="bg-blue-700 h-24 w-80 rounded-3xl text-center hover:scale-105 text-white hover:bg-blue-800"></div>
+        <div className="bg-blue-700 h-24 w-80 rounded-3xl text-center hover:scale-105 text-white hover:bg-blue-800"><img src="imges/uni.svg" alt="" /></div>
       </div>
 
       <div className="text-center mb-10 mt-16">
