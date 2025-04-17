@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom'
 import { useState , useEffect } from 'react'
 import { toast } from 'react-toastify'
 import Profile from '../home/profile'
+import { useNavigate } from 'react-router-dom'
 
 export default function navbar() {
 
   const [isAuth, setIsAuth] = useState(false);
   const [hide , setHide] = useState(true)
 
+  const navigate = useNavigate();
 
 
   useEffect(() => {
@@ -26,8 +28,7 @@ const Logout = () => {
 
   toast.success('Logout successfully')
   setIsAuth(false)
-  window.location.href = '/login'
-  
+  navigate('/login');
 }
 
 

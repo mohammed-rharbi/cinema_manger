@@ -52,7 +52,7 @@ export default function CreateMovie({hideIt}) {
             try {
                 await createMovie({ title : name , description : description , deroctor : deroctor , duration : duration , relseDate : relseDate , image: image , gen : genre});
                 toast.success("Movie Created Successfully");
-                hide();
+                hideIt();
             } catch (err) {
                 toast.error("There was an error while creating the movie.");
             }

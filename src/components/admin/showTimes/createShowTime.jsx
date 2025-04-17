@@ -16,7 +16,7 @@ const createShowTime = async (data) => {
 
     }catch(err){
         console.log(err)
-        toast.error('there is an error')
+        toast.error('there is an error',)
     }
 }
 
@@ -86,8 +86,9 @@ export default function CreateShowTime({hideIt}) {
         if (validate()) {
             try {
                 await createShowTime({ movie : movie , time : time , price : price , room : room });
+                hideIt();
                 toast.success("ShowTime Created Successfully");
-                hideIt
+                
             } catch (err) {
                 toast.error("There was an error while creating the ShowTime.");
             }
@@ -126,7 +127,7 @@ export default function CreateShowTime({hideIt}) {
   return (
 
 <div aria-hidden="true" className='fixed top-0 left-0 z-30 flex justify-center items-center w-full h-full max-h-full-1'>
- <div className='absolute top-0 left-0 bg-black bg-opacity-60  h-full w-full z-40' ></div> 
+ <div onClick={hideIt} className='absolute top-0 left-0 bg-black bg-opacity-60  h-full w-full z-40' ></div> 
 
         <div className="relative  flex p-4 z-50 p-4  max-w-md max-h-full">
 

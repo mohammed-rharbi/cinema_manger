@@ -6,11 +6,11 @@ import { useNavigate, useParams } from 'react-router-dom'
 import FileButton from '../../UI/fileButton'
 
 
-const UploadVideo = async (data , id) => {
+const UploadVideo = async (formData , id) => {
 
     try{
 
-        const res = await AxiosInstance.post(`movie/${id}/addVideo` , data ,{
+        const res = await AxiosInstance.post(`movie/${id}/addVideo` , formData ,{
 
             headers:{
                 'Content-Type': 'multipart/form-data',
@@ -18,7 +18,8 @@ const UploadVideo = async (data , id) => {
         });
 
         if(res.status === 201){
-            return toast.success('movie ben added successfully')
+            toast.success('movie ben added successfully')
+            return res.data ;
 
         }else{
             throw new Error('movie not added')
@@ -61,7 +62,7 @@ export default function AddVideo() {
             };
     
         getMovie();
-    }, [])
+    }, [id])
     
         
     const handleCreate = async (e) => {
@@ -71,8 +72,11 @@ export default function AddVideo() {
         if (validate()) {
             try {
 
-                await UploadVideo({video : video } , id);
-                toast.success("The Movie ben added Successfully");
+
+                const formData = new FormData();
+                formData.append('video',video);
+
+                await UploadVideo( formData , id);
                 Navigate("/Manage_movies");
 
             } catch (err) {
@@ -86,9 +90,10 @@ export default function AddVideo() {
     const validate = () => {
         let result = true;
     
-        if (video === null) {
+        if (!video || video === null) {
             result = false;
             toast.warning('Please Enter The Movie ');
+            return false;
         }
 
         return result;

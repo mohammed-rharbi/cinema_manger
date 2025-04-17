@@ -3,6 +3,7 @@ import AxiosInstance from '../../../services/axios';
 import Loading from '../../UI/loading';
 import CreateRoom from './createRooms';
 import DeleteRoom from './deleteRoom';
+import UpdateRoom from './editRoom';
 
 
 export default function Manage_rooms() {
@@ -13,6 +14,9 @@ export default function Manage_rooms() {
 
 
   const [showCreate, setShowCreate] = useState(false);
+  const [showUpdate, setShowUpdate] = useState(false);
+
+  const [selectedRoom , setSelectedRoom] = useState(null);
 
 
   useEffect(() => {
@@ -38,6 +42,11 @@ export default function Manage_rooms() {
     setShowCreate(false);
 };
 
+const hidtUpdate =()=>{
+  setShowUpdate(false);
+  setSelectedRoom(null);
+}
+
   return (
 
     <>
@@ -45,12 +54,14 @@ export default function Manage_rooms() {
 
 {showCreate && <CreateRoom hideIt={hideIt} />}
 
+{showUpdate && <UpdateRoom roomId={selectedRoom} hideEdit={hidtUpdate} />}
+
 
 <div className="min-h-screen bg-gray-900 py-10 px-5">
 <div className="flex justify-center gap-8 mt-8">
         <div onClick={()=> setShowCreate(true)} className="bg-blue-700 h-24 w-80 rounded-3xl text-center hover:scale-105 text-white hover:bg-blue-800"> add show Room </div>
         <div className="bg-blue-700 h-24 w-80 rounded-3xl text-center hover:scale-105 text-white hover:bg-blue-800"></div>
-        <div className="bg-blue-700 h-24 w-80 rounded-3xl text-center hover:scale-105 text-white hover:bg-blue-800"></div>
+        <div className="bg-blue-700 h-24 w-80 rounded-3xl text-center hover:scale-105 text-white hover:bg-blue-800"><img src="imges/uni.svg" alt="" /></div>
       </div>
 
       <div className="text-center mb-10 mt-16">
@@ -70,13 +81,15 @@ export default function Manage_rooms() {
               <p className="text-sm text-gray-400">{room.capacity}</p>
 
               <div className="flex justify-between items-center mt-5">
-                <button className="bg-blue-500 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded transition">
+                <button  onClick={()=> {setShowUpdate(true) ; setSelectedRoom(room._id) }} className="bg-blue-500 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded transition">
                   Edit
                 </button>
+
+                <DeleteRoom id={room._id}/>
               </div>
-              <DeleteRoom id={room._id}/>
-            </div>
+            </div>            
           </div>
+          
         ))}
       </div>
     </div>
